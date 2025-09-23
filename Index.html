@@ -9,15 +9,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .animated-element {
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: opacity, transform;
+        }
+        .slide-up {
+            transform: translateY(50px);
+        }
+        .slide-in-left {
+            transform: translateX(-50px);
+        }
+        .slide-in-right {
+            transform: translateX(50px);
+        }
+        .scale-in {
+            transform: scale(0.95);
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translate(0, 0) scale(1);
         }
     </style>
 </head>
 <body class="bg-gradient-to-b from-amber-50 to-white text-slate-800">
 
     <div class="min-h-screen">
-        <!-- HEADER -->
         <header class="max-w-5xl mx-auto p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 bg-amber-300 rounded-2xl flex items-center justify-center text-2xl font-bold flex-shrink-0">🐶</div>
@@ -27,74 +51,67 @@
                 </div>
             </div>
             <nav class="flex gap-3 items-center">
-                <a href="tel:+79539614167" class="px-4 py-2 rounded-lg border border-amber-300 text-sm font-medium hover:bg-amber-100 transition-colors">Позвонить</a>
-                <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-amber-500 text-white text-sm font-medium hover:bg-amber-600 transition-colors">Написать в WhatsApp</a>
+                <a href="tel:+79539614167" class="px-4 py-2 rounded-lg border border-amber-300 text-sm font-medium hover:bg-amber-100 transition-all duration-300">Позвонить</a>
+                <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-amber-500 text-white text-sm font-medium hover:bg-amber-600 transition-all duration-300 transform hover:scale-105">Написать в WhatsApp</a>
             </nav>
         </header>
 
-        <!-- MAIN CONTENT -->
         <main class="max-w-5xl mx-auto p-4 sm:p-6">
             
-            <!-- HERO SECTION -->
-            <section class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+            <section class="bg-white rounded-2xl shadow-lg p-6 mb-6 animated-element scale-in">
                 <div class="md:flex md:items-center md:gap-8">
-                    <div class="flex-1">
+                    <div class="flex-1 animated-element slide-in-left" style="transition-delay: 200ms;">
                         <h2 class="text-3xl lg:text-4xl font-bold mb-3 leading-tight">Собачий курорт "Хвост Виллой" 🏡</h2>
                         <p class="text-slate-600 leading-relaxed mb-6">Планируете отпуск, а тревожная мысль: "С кем оставить моего самого лучшего, самого любимого, самого хорошего мальчика/девочку?" — портит весь настрой? Хватит это терпеть! Отправьте своего хвостика не на передержку, а на настоящие собачьи каникулы.</p>
-                        
                         <div class="flex flex-wrap gap-3">
-                            <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-600 transition-transform hover:scale-105">Забронировать в WhatsApp</a>
-                            <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl border border-amber-300 hover:bg-amber-100 transition-colors">Написать в Telegram</a>
-                            <a href="tel:+79539614167" class="px-5 py-3 rounded-xl hover:bg-gray-100 transition-colors">Позвонить: +79539614167</a>
+                            <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-500 text-white font-semibold transition-all duration-300 hover:bg-amber-600 transform hover:scale-105">Забронировать в WhatsApp</a>
+                            <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl border border-amber-300 hover:bg-amber-100 transition-all duration-300">Написать в Telegram</a>
                         </div>
                     </div>
 
-                    <div class="mt-8 md:mt-0 md:w-80 lg:w-96 flex-shrink-0">
-                        <div class="rounded-2xl overflow-hidden shadow-md">
-                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=1974&auto=format&fit=crop" alt="Счастливый пёс на траве" class="w-full h-64 object-cover">
+                    <div class="mt-8 md:mt-0 md:w-80 lg:w-96 flex-shrink-0 relative h-64 animated-element slide-in-right" style="transition-delay: 300ms;">
+                         <div class="absolute inset-0 rounded-2xl overflow-hidden shadow-md group">
+                            <img id="hero-image" src='https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png' alt="Счастливый пёс на траве" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- FEATURES SECTION -->
-            <section class="grid md:grid-cols-3 gap-4 mb-6">
-                <article class="bg-white p-5 rounded-2xl shadow-md hover:shadow-xl transition-shadow">
+            <section class="grid md:grid-cols-3 gap-4 mb-6 stagger-container">
+                <article class="bg-white p-5 rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animated-element slide-up">
                     <h3 class="font-semibold mb-2 text-lg">🐾 Лежание на диване со смыслом</h3>
                     <p class="text-sm text-slate-600">Просмотр фильмов про отважных собак, глубокомысленные вздохи и сладкая дрёма. Мягкие подушки и персональные одеяла — для каждого гостя.</p>
                 </article>
 
-                <article class="bg-white p-5 rounded-2xl shadow-md hover:shadow-xl transition-shadow">
+                <article class="bg-white p-5 rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animated-element slide-up">
                     <h3 class="font-semibold mb-2 text-lg">🌳 Двухразовый патруль района</h3>
                     <p class="text-sm text-slate-600">Исследуем все кусты, знакомимся с местными запахами и оставляем свои "сообщения". Прогулки подстраиваются под темперамент.</p>
                 </article>
 
-                <article class="bg-white p-5 rounded-2xl shadow-md hover:shadow-xl transition-shadow">
+                <article class="bg-white p-5 rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animated-element slide-up">
                     <h3 class="font-semibold mb-2 text-lg">🍖 Ресторанное обслуживание</h3>
-                    <p class="text-sm text-slate-600">Питание по вашему меню и в привычное время. Никаких "у нас этого нет" — только любимые лакомства и правильные порции.</p>
+                    <p class="text-sm text-slate-600">Питание по Вашему меню и в привычное время. Никаких "у нас этого нет" — только любимые лакомства и правильные порции.</p>
                 </article>
             </section>
 
-            <!-- INCLUDED SECTION -->
-            <section class="bg-white p-6 rounded-2xl shadow-lg mb-6">
+            <section class="bg-white p-6 rounded-2xl shadow-lg mb-6 animated-element slide-up">
                 <h3 class="text-2xl font-bold mb-4">Что ещё включено</h3>
-                <ul class="list-inside list-disc text-slate-600 space-y-2 marker:text-amber-500">
-                    <li>❤️ Чесание за ушком non-stop (включено в базовый тариф).</li>
-                    <li>📸 Ежедневный фото-спам для хозяев — фото- и видеоотчёты.</li>
-                    <li>🛏️ Мягкие диваны и персональное место для сна (без клеток и ограничений).</li>
-                    <li>🩺 Безопасность и забота 24/7 — только неагрессивные, привитые питомцы.</li>
+                <ul class="list-inside list-disc text-slate-600 space-y-2 marker:text-amber-500 stagger-container">
+                    <li class="animated-element slide-in-left">❤️ Чесание за ушком non-stop (включено в базовый тариф).</li>
+                    <li class="animated-element slide-in-left">📸 Ежедневный фото-спам для хозяев — фото- и видеоотчёты.</li>
+                    <li class="animated-element slide-in-left">🛏️ Мягкие диваны и персональное место для сна (без клеток и ограничений).</li>
+                    <li class="animated-element slide-in-left">🩺 Безопасность и забота 24/7 — только неагрессивные, привитые питомцы.</li>
                 </ul>
             </section>
 
-            <!-- ABOUT & PRICING -->
             <section class="grid md:grid-cols-2 gap-4 mb-6">
-                <div class="bg-white p-6 rounded-2xl shadow-md">
-                    <h3 class="text-xl font-semibold mb-2">Обо мне</h3>
-                    <p class="text-slate-600 mb-3">Я — профессиональная обнимательница собак, сертифицированный специалист по бросанию мячика и главный амбассадор собачьего счастья. Ваш питомец будет окружен заботой, лаской и безопасностью 24/7.</p>
-                    <p class="text-sm text-slate-500">Работаю индивидуально, слежу за рационом и настроением каждого гостя.</p>
+                <div class="bg-white p-6 rounded-2xl shadow-md animated-element slide-in-left">
+                    <h3 class="text-xl font-semibold mb-2">О нас</h3>
+                    <p class="text-slate-600 mb-3">Мы — команда профессиональных обнимателей собак, сертифицированных специалистов по бросанию мячика и главных амбассадоров собачьего счастья. Ваш питомец будет окружен заботой, лаской и безопасностью 24/7.</p>
+                    <p class="text-sm text-slate-500">Мы работаем индивидуально, следим за рационом и настроением каждого гостя.</p>
                 </div>
 
-                <div class="bg-white p-6 rounded-2xl shadow-md">
+                <div class="bg-white p-6 rounded-2xl shadow-md animated-element slide-in-right">
                     <h3 class="text-xl font-semibold mb-2">Стоимость путевки</h3>
                     <p class="text-3xl font-bold text-amber-500 mb-2">От 780 ₽ / сутки</p>
                     <p class="text-slate-600 mb-3">Полный пансион и хвост виляющий от радости. Места ограничены — мягкий диван только для дружелюбных гостей.</p>
@@ -102,53 +119,87 @@
                 </div>
             </section>
 
-            <!-- IMPORTANT NOTE -->
-            <section class="bg-amber-100 p-6 rounded-2xl shadow-inner border border-amber-200 mb-6">
+            <section class="bg-amber-100 p-6 rounded-2xl shadow-inner border border-amber-200 mb-6 animated-element scale-in">
                 <h3 class="text-2xl font-bold mb-3 text-amber-800">ВАЖНО</h3>
                 <p class="text-slate-700 mb-4">Количество мест на мягком диване ограничено! Мы принимаем только неагрессивных, привитых и обработанных от паразитов собак.</p>
                 <div class="flex flex-wrap gap-3">
-                    <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-600 text-white font-semibold hover:bg-amber-700 transition-colors">Забронировать (WhatsApp)</a>
-                    <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl border border-amber-400 text-amber-800 hover:bg-amber-200 transition-colors">Telegram</a>
+                    <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-600 text-white font-semibold transition-all duration-300 hover:bg-amber-700 transform hover:scale-105">Забронировать (WhatsApp)</a>
+                    <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl border border-amber-400 text-amber-800 hover:bg-amber-200 transition-all duration-300">Telegram</a>
                 </div>
             </section>
 
-            <!-- FAQ SECTION -->
-            <section class="bg-white p-6 rounded-2xl shadow-md mb-12">
+            <section class="bg-white p-6 rounded-2xl shadow-md mb-12 animated-element slide-up">
                 <h3 class="text-xl font-semibold mb-4">Часто задаваемые вопросы</h3>
                 <div class="space-y-3">
                     <details class="group">
-                        <summary class="font-medium cursor-pointer list-none flex justify-between items-center">
+                        <summary class="font-medium cursor-pointer list-none flex justify-between items-center transition-colors duration-300 hover:text-amber-600">
                             Можно ли оставить питомца на несколько недель?
-                            <span class="transition-transform duration-300 group-open:rotate-180">▼</span>
+                            <span class="transition-transform duration-300 group-open:rotate-180 text-amber-500">▼</span>
                         </summary>
-                        <p class="text-slate-600 mt-2">Да — по предварительной договорённости. Длительные заезды оговариваются отдельно.</p>
+                        <p class="text-slate-600 mt-2 p-2 bg-gray-50 rounded-md">Да — по предварительной договорённости. Длительные заезды оговариваются отдельно.</p>
                     </details>
                     <hr>
                     <details class="group">
-                        <summary class="font-medium cursor-pointer list-none flex justify-between items-center">
+                        <summary class="font-medium cursor-pointer list-none flex justify-between items-center transition-colors duration-300 hover:text-amber-600">
                             Что делать с лекарствами?
-                             <span class="transition-transform duration-300 group-open:rotate-180">▼</span>
+                             <span class="transition-transform duration-300 group-open:rotate-180 text-amber-500">▼</span>
                         </summary>
-                        <p class="text-slate-600 mt-2">Оставьте инструкцию и лекарство. Я даю лекарства по расписанию и документально фиксирую приём.</p>
+                        <p class="text-slate-600 mt-2 p-2 bg-gray-50 rounded-md">Оставьте инструкцию и лекарство. Мы даем лекарства по расписанию и документально фиксируем приём.</p>
                     </details>
                      <hr>
                     <details class="group">
-                        <summary class="font-medium cursor-pointer list-none flex justify-between items-center">
-                            Как вы присылаете фото-отчёты?
-                             <span class="transition-transform duration-300 group-open:rotate-180">▼</span>
+                        <summary class="font-medium cursor-pointer list-none flex justify-between items-center transition-colors duration-300 hover:text-amber-600">
+                            Как Вы присылаете фото-отчёты?
+                             <span class="transition-transform duration-300 group-open:rotate-180 text-amber-500">▼</span>
                         </summary>
-                        <p class="text-slate-600 mt-2">Через WhatsApp/Telegram — по вашему желанию: ежедневные короткие ролики и фото-пачки.</p>
+                        <p class="text-slate-600 mt-2 p-2 bg-gray-50 rounded-md">Через WhatsApp/Telegram — по Вашему желанию: ежедневные короткие ролики и фото-пачки.</p>
                     </details>
                 </div>
             </section>
 
-            <!-- FOOTER -->
-            <footer class="text-center text-sm text-slate-500 pb-6">
-                <p>© Собачий курорт "Хвост Виллой" — Все права и хвосты защищены.</p>
+            <footer class="text-center text-sm text-slate-500 pb-6 animated-element scale-in">
+                <p>© Собачий курорт "Хвост Виллой", 2025. Все права защищены.</p>
             </footer>
 
         </main>
     </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const animatedElements = document.querySelectorAll('.animated-element');
+            const heroImage = document.getElementById('hero-image');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        
+                        const container = entry.target.closest('.stagger-container') || entry.target;
+                        if(container.classList.contains('stagger-container')){
+                            const children = Array.from(container.querySelectorAll('.animated-element'));
+                            children.forEach((child, index) => {
+                                child.style.transitionDelay = `${index * 150}ms`;
+                            });
+                        }
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+
+            window.addEventListener('scroll', () => {
+                if (!heroImage) return;
+                const scrollPosition = window.scrollY;
+                heroImage.style.transform = `translateY(${scrollPosition * 0.3}px) scale(1.1)`;
+            }, { passive: true });
+        });
+    </script>
 </body>
 </html>
+
