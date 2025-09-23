@@ -18,6 +18,21 @@
             background: linear-gradient(-45deg, #FFFCF5, #FFF9E6, #FEF3C7, #FFFCF5);
             background-size: 400% 400%;
             animation: gradient-flow 25s ease infinite;
+            --scroll-y: 0;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='rgba(251, 191, 36, 0.08)' transform='rotate(20 50 50)'%3E%3Cellipse cx='50' cy='65' rx='18' ry='14'/%3E%3Ccircle cx='28' cy='38' r='8'/%3E%3Ccircle cx='50' cy='30' r='8'/%3E%3Ccircle cx='72' cy='38' r='8'/%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            z-index: -1;
+            will-change: background-position;
+            background-position-y: var(--scroll-y);
         }
         @keyframes gradient-flow {
             0% { background-position: 0% 50%; }
@@ -29,40 +44,53 @@
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
-        .slide-up {
-            transform: translateY(30px);
-        }
-        .slide-in-left {
-            transform: translateX(-30px);
-        }
-        .slide-in-right {
-            transform: translateX(30px);
-        }
-        .scale-in {
-            transform: scale(0.95);
-        }
+        .slide-up { transform: translateY(30px); }
+        .slide-in-left { transform: translateX(-30px); }
+        .slide-in-right { transform: translateX(30px); }
+        .scale-in { transform: scale(0.95); }
         .is-visible {
             opacity: 1;
             transform: translate(0, 0) scale(1);
         }
         @keyframes pulse-glow {
-            0%, 100% {
-                box-shadow: 0 0 8px 0px rgba(251, 191, 36, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 16px 4px rgba(251, 191, 36, 0.5);
-            }
+            0%, 100% { box-shadow: 0 0 8px 0px rgba(251, 191, 36, 0.4); }
+            50% { box-shadow: 0 0 16px 4px rgba(251, 191, 36, 0.5); }
         }
-        .cta-pulse {
-            animation: pulse-glow 3s infinite ease-in-out;
-        }
+        .cta-pulse { animation: pulse-glow 3s infinite ease-in-out; }
         details > p {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s cubic-bezier(0.2, 0, 0, 1);
         }
-        details[open] > p {
-            max-height: 200px;
+        details[open] > p { max-height: 200px; }
+        @keyframes tail-wag {
+            0% { transform: rotate(-8deg) scale(1.05); }
+            100% { transform: rotate(8deg) scale(1.05); }
+        }
+        .logo-icon:hover { animation: tail-wag 0.4s ease-in-out infinite alternate; }
+        .cta-button {
+            transition: transform 0.15s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.15s ease, filter 0.15s ease;
+        }
+        .cta-button:active {
+            transform: scale(0.96) translateY(1px);
+            filter: brightness(0.92);
+        }
+        @keyframes icon-pop {
+            0% { transform: scale(0.5); opacity: 0; }
+            70% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animated-icon {
+            display: inline-block;
+            animation-fill-mode: forwards;
+            opacity: 0;
+            transform-origin: center center;
+        }
+        .is-visible .animated-icon {
+            animation-name: icon-pop;
+            animation-duration: 0.5s;
+            animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            animation-delay: inherit;
         }
     </style>
 </head>
@@ -71,15 +99,15 @@
     <div class="min-h-screen">
         <header class="max-w-5xl mx-auto p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-4 animated-element slide-in-left">
-                <div class="w-12 h-12 bg-amber-300 rounded-2xl flex items-center justify-center text-2xl font-bold flex-shrink-0">🐾</div>
+                <div class="w-12 h-12 bg-amber-300 rounded-2xl flex items-center justify-center text-2xl font-bold flex-shrink-0 logo-icon transition-transform duration-200">🐾</div>
                 <div>
                     <h1 class="text-xl sm:text-2xl font-extrabold">Собачье дело</h1>
                     <p class="text-sm text-slate-500">Профессиональный уход и забота.</p>
                 </div>
             </div>
             <nav class="flex gap-3 items-center animated-element slide-in-right">
-                <a href="tel:+79539614167" class="px-4 py-2 rounded-lg border border-amber-300 text-sm font-medium hover:bg-amber-100 transition-all duration-300">Позвонить</a>
-                <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-amber-500 text-white text-sm font-medium hover:bg-amber-600 transition-all duration-300 transform hover:scale-105">Написать в WhatsApp</a>
+                <a href="tel:+79539614167" class="px-4 py-2 rounded-lg border border-amber-300 text-sm font-medium hover:bg-amber-100 cta-button">Позвонить</a>
+                <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-amber-500 text-white text-sm font-medium hover:bg-amber-600 cta-button">Написать в WhatsApp</a>
             </nav>
         </header>
 
@@ -91,8 +119,8 @@
                         <h2 class="text-3xl lg:text-4xl font-bold mb-3 leading-tight">Собачье дело: каникулы для вашего друга</h2>
                         <p class="text-slate-600 leading-relaxed mb-6">Планируете отпуск, а тревожная мысль: "С кем оставить моего самого лучшего, самого любимого, самого хорошего мальчика/девочку?" — портит весь настрой? Хватит это терпеть! Отправьте своего хвостика не на передержку, а на настоящие собачьи каникулы.</p>
                         <div class="flex flex-wrap gap-3">
-                            <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-500 text-white font-semibold transition-all duration-300 hover:bg-amber-600 transform hover:scale-105 cta-pulse">Забронировать в WhatsApp</a>
-                            <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl border border-amber-300 hover:bg-amber-100 transition-all duration-300">Написать в Telegram</a>
+                            <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-600 cta-pulse cta-button">Забронировать в WhatsApp</a>
+                            <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl border border-amber-300 hover:bg-amber-100 cta-button">Написать в Telegram</a>
                         </div>
                     </div>
 
@@ -123,11 +151,23 @@
 
             <section class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg mb-6 animated-element slide-up">
                 <h3 class="text-2xl font-bold mb-4">Что ещё включено</h3>
-                <ul class="list-inside list-disc text-slate-600 space-y-2 marker:text-amber-500 stagger-container">
-                    <li class="animated-element slide-in-left">❤️ Чесание за ушком non-stop (включено в базовый тариф).</li>
-                    <li class="animated-element slide-in-left">📸 Ежедневный фото-спам для хозяев — фото- и видеоотчёты.</li>
-                    <li class="animated-element slide-in-left">🛏️ Мягкие диваны и персональное место для сна (без клеток и ограничений).</li>
-                    <li class="animated-element slide-in-left">🩺 Безопасность и забота 24/7 — только неагрессивные, привитые питомцы.</li>
+                <ul class="text-slate-600 space-y-3 stagger-container">
+                    <li class="animated-element slide-in-left flex items-start">
+                        <span class="animated-icon mr-3 text-xl leading-tight">❤️</span>
+                        <span>Чесание за ушком non-stop (включено в базовый тариф).</span>
+                    </li>
+                    <li class="animated-element slide-in-left flex items-start">
+                        <span class="animated-icon mr-3 text-xl leading-tight">📸</span>
+                        <span>Ежедневные фото и видео счастливого питомца прямо в вашем телефоне.</span>
+                    </li>
+                    <li class="animated-element slide-in-left flex items-start">
+                        <span class="animated-icon mr-3 text-xl leading-tight">🛏️</span>
+                        <span>Мягкие диваны и персональное место для сна (без клеток и ограничений).</span>
+                    </li>
+                    <li class="animated-element slide-in-left flex items-start">
+                        <span class="animated-icon mr-3 text-xl leading-tight">🩺</span>
+                        <span>Безопасность и забота 24/7 — только неагрессивные, привитые питомцы.</span>
+                    </li>
                 </ul>
             </section>
 
@@ -150,8 +190,8 @@
                 <h3 class="text-2xl font-bold mb-3 text-amber-800">ВАЖНО</h3>
                 <p class="text-slate-700 mb-4">Количество мест на мягком диване ограничено! Мы принимаем только неагрессивных, привитых и обработанных от паразитов собак.</p>
                 <div class="flex flex-wrap gap-3">
-                    <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-600 text-white font-semibold transition-all duration-300 hover:bg-amber-700 transform hover:scale-105 cta-pulse">Забронировать (WhatsApp)</a>
-                    <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl border border-amber-400 text-amber-800 hover:bg-amber-200 transition-all duration-300">Telegram</a>
+                    <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-600 text-white font-semibold hover:bg-amber-700 cta-pulse cta-button">Забронировать (WhatsApp)</a>
+                    <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl border border-amber-400 text-amber-800 hover:bg-amber-200 cta-button">Telegram</a>
                 </div>
             </section>
 
@@ -194,18 +234,18 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const animatedElements = document.querySelectorAll('.animated-element');
-
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
                         
                         const container = entry.target.closest('.stagger-container');
-                        if (container && container.dataset.staggered !== 'true') {
+                        if (container && !container.dataset.staggered) {
                             container.dataset.staggered = 'true';
-                            const children = Array.from(container.querySelectorAll('.animated-element'));
+                            const children = Array.from(container.querySelectorAll('.animated-element, .animated-icon'));
                             children.forEach((child, index) => {
                                 child.style.transitionDelay = `${index * 100}ms`;
+                                child.style.animationDelay = `${index * 100 + 200}ms`;
                             });
                         }
                         
@@ -221,7 +261,21 @@
             animatedElements.forEach(el => {
                 observer.observe(el);
             });
+
+            const body = document.body;
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        const yPos = window.scrollY;
+                        body.style.setProperty('--scroll-y', `${-yPos / 15}px`);
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
         });
     </script>
 </body>
 </html>
+
