@@ -15,20 +15,21 @@
         body {
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            background-color: #FFFCF5;
         }
         .animated-element {
             opacity: 0;
-            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
         .slide-up {
-            transform: translateY(50px);
+            transform: translateY(30px);
         }
         .slide-in-left {
-            transform: translateX(-50px);
+            transform: translateX(-30px);
         }
         .slide-in-right {
-            transform: translateX(50px);
+            transform: translateX(30px);
         }
         .scale-in {
             transform: scale(0.95);
@@ -37,20 +38,31 @@
             opacity: 1;
             transform: translate(0, 0) scale(1);
         }
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 8px 0px rgba(251, 191, 36, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 16px 4px rgba(251, 191, 36, 0.5);
+            }
+        }
+        .cta-pulse {
+            animation: pulse-glow 3s infinite ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-b from-amber-50 to-white text-slate-800">
 
     <div class="min-h-screen">
         <header class="max-w-5xl mx-auto p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-4 animated-element slide-in-left">
                 <div class="w-12 h-12 bg-amber-300 rounded-2xl flex items-center justify-center text-2xl font-bold flex-shrink-0">🐶</div>
                 <div>
                     <h1 class="text-xl sm:text-2xl font-extrabold">Собачий курорт "Хвост Виллой" <span class="text-amber-500">🏡</span></h1>
                     <p class="text-sm text-slate-500">Ваш пёс вернётся отдохнувшим!</p>
                 </div>
             </div>
-            <nav class="flex gap-3 items-center">
+            <nav class="flex gap-3 items-center animated-element slide-in-right">
                 <a href="tel:+79539614167" class="px-4 py-2 rounded-lg border border-amber-300 text-sm font-medium hover:bg-amber-100 transition-all duration-300">Позвонить</a>
                 <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-amber-500 text-white text-sm font-medium hover:bg-amber-600 transition-all duration-300 transform hover:scale-105">Написать в WhatsApp</a>
             </nav>
@@ -64,14 +76,14 @@
                         <h2 class="text-3xl lg:text-4xl font-bold mb-3 leading-tight">Собачий курорт "Хвост Виллой" 🏡</h2>
                         <p class="text-slate-600 leading-relaxed mb-6">Планируете отпуск, а тревожная мысль: "С кем оставить моего самого лучшего, самого любимого, самого хорошего мальчика/девочку?" — портит весь настрой? Хватит это терпеть! Отправьте своего хвостика не на передержку, а на настоящие собачьи каникулы.</p>
                         <div class="flex flex-wrap gap-3">
-                            <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-500 text-white font-semibold transition-all duration-300 hover:bg-amber-600 transform hover:scale-105">Забронировать в WhatsApp</a>
+                            <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-500 text-white font-semibold transition-all duration-300 hover:bg-amber-600 transform hover:scale-105 cta-pulse">Забронировать в WhatsApp</a>
                             <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl border border-amber-300 hover:bg-amber-100 transition-all duration-300">Написать в Telegram</a>
                         </div>
                     </div>
 
-                    <div class="mt-8 md:mt-0 md:w-80 lg:w-96 flex-shrink-0 relative h-64 animated-element slide-in-right" style="transition-delay: 300ms;">
-                         <div class="absolute inset-0 rounded-2xl overflow-hidden shadow-md group">
-                            <img id="hero-image" src='https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png' alt="Счастливый пёс на траве" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="mt-8 md:mt-0 md:w-80 lg:w-96 flex-shrink-0 h-64 sm:h-auto md:h-80 animated-element slide-in-right" style="transition-delay: 300ms;">
+                         <div class="w-full h-full rounded-2xl overflow-hidden shadow-md group">
+                            <img src='https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png' alt="Счастливый пёс на траве" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
                     </div>
                 </div>
@@ -123,7 +135,7 @@
                 <h3 class="text-2xl font-bold mb-3 text-amber-800">ВАЖНО</h3>
                 <p class="text-slate-700 mb-4">Количество мест на мягком диване ограничено! Мы принимаем только неагрессивных, привитых и обработанных от паразитов собак.</p>
                 <div class="flex flex-wrap gap-3">
-                    <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-600 text-white font-semibold transition-all duration-300 hover:bg-amber-700 transform hover:scale-105">Забронировать (WhatsApp)</a>
+                    <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-600 text-white font-semibold transition-all duration-300 hover:bg-amber-700 transform hover:scale-105 cta-pulse">Забронировать (WhatsApp)</a>
                     <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl border border-amber-400 text-amber-800 hover:bg-amber-200 transition-all duration-300">Telegram</a>
                 </div>
             </section>
@@ -134,25 +146,25 @@
                     <details class="group">
                         <summary class="font-medium cursor-pointer list-none flex justify-between items-center transition-colors duration-300 hover:text-amber-600">
                             Можно ли оставить питомца на несколько недель?
-                            <span class="transition-transform duration-300 group-open:rotate-180 text-amber-500">▼</span>
+                            <span class="transition-transform duration-300 group-open:-rotate-180 text-amber-500">▼</span>
                         </summary>
-                        <p class="text-slate-600 mt-2 p-2 bg-gray-50 rounded-md">Да — по предварительной договорённости. Длительные заезды оговариваются отдельно.</p>
+                        <p class="text-slate-600 mt-2 p-3 bg-amber-50/50 rounded-md">Да — по предварительной договорённости. Длительные заезды оговариваются отдельно.</p>
                     </details>
                     <hr>
                     <details class="group">
                         <summary class="font-medium cursor-pointer list-none flex justify-between items-center transition-colors duration-300 hover:text-amber-600">
                             Что делать с лекарствами?
-                             <span class="transition-transform duration-300 group-open:rotate-180 text-amber-500">▼</span>
+                             <span class="transition-transform duration-300 group-open:-rotate-180 text-amber-500">▼</span>
                         </summary>
-                        <p class="text-slate-600 mt-2 p-2 bg-gray-50 rounded-md">Оставьте инструкцию и лекарство. Мы даем лекарства по расписанию и документально фиксируем приём.</p>
+                        <p class="text-slate-600 mt-2 p-3 bg-amber-50/50 rounded-md">Оставьте инструкцию и лекарство. Мы даем лекарства по расписанию и документально фиксируем приём.</p>
                     </details>
                      <hr>
                     <details class="group">
                         <summary class="font-medium cursor-pointer list-none flex justify-between items-center transition-colors duration-300 hover:text-amber-600">
                             Как Вы присылаете фото-отчёты?
-                             <span class="transition-transform duration-300 group-open:rotate-180 text-amber-500">▼</span>
+                             <span class="transition-transform duration-300 group-open:-rotate-180 text-amber-500">▼</span>
                         </summary>
-                        <p class="text-slate-600 mt-2 p-2 bg-gray-50 rounded-md">Через WhatsApp/Telegram — по Вашему желанию: ежедневные короткие ролики и фото-пачки.</p>
+                        <p class="text-slate-600 mt-2 p-3 bg-amber-50/50 rounded-md">Через WhatsApp/Telegram — по Вашему желанию: ежедневные короткие ролики и фото-пачки.</p>
                     </details>
                 </div>
             </section>
@@ -167,22 +179,24 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const animatedElements = document.querySelectorAll('.animated-element');
-            const heroImage = document.getElementById('hero-image');
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
                         
-                        const container = entry.target.closest('.stagger-container') || entry.target;
-                        if(container.classList.contains('stagger-container')){
+                        const container = entry.target.closest('.stagger-container');
+                        if (container && container.dataset.staggered !== 'true') {
+                            container.dataset.staggered = 'true';
                             const children = Array.from(container.querySelectorAll('.animated-element'));
                             children.forEach((child, index) => {
-                                child.style.transitionDelay = `${index * 150}ms`;
+                                child.style.transitionDelay = `${index * 100}ms`;
                             });
                         }
                         
-                        observer.unobserve(entry.target);
+                        if (!entry.target.closest('.stagger-container')) {
+                            observer.unobserve(entry.target);
+                        }
                     }
                 });
             }, {
@@ -192,14 +206,7 @@
             animatedElements.forEach(el => {
                 observer.observe(el);
             });
-
-            window.addEventListener('scroll', () => {
-                if (!heroImage) return;
-                const scrollPosition = window.scrollY;
-                heroImage.style.transform = `translateY(${scrollPosition * 0.3}px) scale(1.1)`;
-            }, { passive: true });
         });
     </script>
 </body>
 </html>
-
