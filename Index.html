@@ -5,45 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Собачье дело — Домашняя передержка собак в Туле и Тульской области</title>
     
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
-
+    <!-- Основные SEO-теги -->
     <meta name="description" content="Заботливая домашняя передержка для собак в Туле. Уютные условия без клеток, прогулки, фото-отчеты и индивидуальный уход. Бронируйте каникулы для вашего питомца!">
     <meta name="keywords" content="передержка собак тула, домашняя передержка тула, оставить собаку тула, гостиница для собак тула, зооняня тула">
     
+    <!-- Favicon (иконка вкладки) в виде лапки -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🐾%3C/text%3E%3C/svg%3E">
+
+    <!-- Google Verification Tag -->
     <meta name="google-site-verification" content="S1ohOcvpbjkBpbA7gxz_Vna0tULOV-Z7-AVKYlp2cYw" />
 
-    <meta property="og:title" content="Собачье дело — Каникулы для вашего друга в Туле" />
-    <meta property="og:description" content="Заботливая домашняя передержка для собак. Уютные условия без клеток, прогулки, фото-отчеты и индивидуальный уход." />
-    <meta property="og:image" content="https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png" />
-    <meta property="og:url" content="https://hvost.netlify.app" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Собачье дело" />
-    <meta property="og:locale" content="ru_RU" />
+    <!-- Open Graph / Facebook Meta Tags (для красивых ссылок в соцсетях и мессенджерах) -->
+    <meta property="og:title" content="Собачье дело — Домашняя передержка в Туле">
+    <meta property="og:description" content="Уютные каникулы для вашего питомца! Без клеток, с любовью и заботой.">
+    <meta property="og:image" content="https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png">
+    <meta property="og:url" content="https://hvost.netlify.app">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Собачье дело">
 
+    <!-- JSON-LD Structured Data (для "умного" отображения в поиске) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Собачье дело",
-      "description": "Профессиональная домашняя передержка собак в Туле. Забота, безопасность и комфорт для вашего питомца 24/7.",
+      "description": "Профессиональная домашняя передержка собак в Туле и Тульской области. Индивидуальный уход, прогулки, фото-отчеты.",
       "image": "https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png",
       "telephone": "+79539614167",
+      "url": "https://hvost.netlify.app",
+      "priceRange": "От 780 ₽",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Тула",
         "addressCountry": "RU"
       },
-      "priceRange": "От 780 ₽",
-      "url": "https://hvost.netlify.app"
+      "openingHours": "Mo-Su 00:00-23:59"
     }
     </script>
     
+    <!-- Подключение Tailwind CSS и шрифтов -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Стили -->
     <style>
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
@@ -51,7 +61,6 @@
             background-size: 400% 400%;
             animation: gradient-flow 25s ease infinite;
             --scroll-y: 0;
-            padding-bottom: 80px; 
         }
         body::before {
             content: '';
@@ -72,6 +81,7 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+        /* Улучшенная структура анимаций появления */
         .animated-element {
             opacity: 0;
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -129,7 +139,8 @@
 </head>
 <body class="text-slate-800">
 
-    <div id="main-content">
+    <!-- Контейнер для основного содержимого страницы -->
+    <div id="main-page">
         <div class="min-h-screen">
             <header class="max-w-5xl mx-auto p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="flex items-center gap-4 animated-element slide-in-left">
@@ -139,7 +150,7 @@
                         <p class="text-sm text-slate-500">Профессиональный уход и забота в Туле.</p>
                     </div>
                 </div>
-                <nav class="hidden sm:flex gap-3 items-center animated-element slide-in-right">
+                <nav class="flex gap-3 items-center animated-element slide-in-right">
                     <a href="tel:+79539614167" class="px-4 py-2 rounded-lg border border-amber-300 text-sm font-medium hover:bg-amber-100 cta-button">Позвонить</a>
                     <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-amber-500 text-white text-sm font-medium hover:bg-amber-600 cta-button">Написать в WhatsApp</a>
                 </nav>
@@ -274,77 +285,84 @@
         </div>
     </div>
     
+    <!-- Контейнер для страницы 404 (скрыт по умолчанию) -->
     <div id="not-found-page" class="hidden">
-        <div class="min-h-screen flex flex-col items-center justify-center text-center p-4">
-            <h1 class="text-8xl font-bold text-amber-400 mb-4">4🐾4</h1>
-            <h2 class="text-3xl font-bold mb-2">Страница в разработке</h2>
-            <p class="text-slate-600 mb-6">Кажется, эта страничка еще не готова встречать гостей. <br>Но мы уже работаем над этим!</p>
-            <a href="/" class="px-5 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-600 cta-button">Вернуться на главную</a>
+        <div class="min-h-screen flex flex-col items-center justify-center text-center p-6">
+            <h1 class="text-6xl font-extrabold text-amber-500 mb-4">404</h1>
+            <p class="text-2xl font-semibold text-slate-700 mb-2">Упс! Кажется, эта страница ушла гулять.</p>
+            <p class="text-slate-500 mb-8">Мы не смогли найти то, что вы искали.</p>
+            <a href="/" class="px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-600 cta-button">Вернуться на главную</a>
         </div>
     </div>
 
-    <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-sm p-3 shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.05)] flex gap-3 z-50">
-        <a href="tel:+79539614167" class="flex-1 text-center px-4 py-3 rounded-lg border border-amber-300 text-sm font-medium bg-white hover:bg-amber-100 cta-button">Позвонить</a>
-        <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="flex-1 text-center px-4 py-3 rounded-lg bg-amber-500 text-white text-sm font-medium hover:bg-amber-600 cta-button">Написать</a>
-    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const mainContent = document.getElementById('main-content');
+            
+            // --- Секция маршрутизации (определяет, какую страницу показать) ---
+            const mainPage = document.getElementById('main-page');
             const notFoundPage = document.getElementById('not-found-page');
             const path = window.location.pathname;
 
-            if (path === '/' || path === '/index.html' || path === '') {
-                mainContent.classList.remove('hidden');
+            // Если путь - это главная страница ('/' или пустой), показываем основное содержимое.
+            // В противном случае показываем страницу 404.
+            if (path === '/' || path === '' || path.startsWith('/index.html')) {
+                mainPage.classList.remove('hidden');
                 notFoundPage.classList.add('hidden');
             } else {
-                mainContent.classList.add('hidden');
+                mainPage.classList.add('hidden');
                 notFoundPage.classList.remove('hidden');
             }
 
-            const animatedElements = document.querySelectorAll('.animated-element');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        
-                        const container = entry.target.closest('.stagger-container');
-                        if (container && !container.dataset.staggered) {
-                            container.dataset.staggered = 'true';
-                            const children = Array.from(container.querySelectorAll('.animated-element, .animated-icon'));
-                            children.forEach((child, index) => {
-                                child.style.transitionDelay = `${index * 100}ms`;
-                                child.style.animationDelay = `${index * 100 + 200}ms`;
-                            });
+            // --- Секция анимаций (работает только если показана главная страница) ---
+            if (!mainPage.classList.contains('hidden')) {
+                const animatedElements = document.querySelectorAll('.animated-element');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            
+                            // Для "ступенчатой" анимации элементов в контейнере
+                            const container = entry.target.closest('.stagger-container');
+                            if (container && !container.dataset.staggered) {
+                                container.dataset.staggered = 'true';
+                                const children = Array.from(container.querySelectorAll('.animated-element, .animated-icon'));
+                                children.forEach((child, index) => {
+                                    child.style.transitionDelay = `${index * 100}ms`;
+                                    child.style.animationDelay = `${index * 100 + 200}ms`;
+                                });
+                            }
+                            
+                            // Отключаем наблюдение за элементом после того, как он стал видимым
+                            if (!entry.target.closest('.stagger-container')) {
+                                observer.unobserve(entry.target);
+                            }
                         }
-                        
-                        if (!entry.target.closest('.stagger-container')) {
-                            observer.unobserve(entry.target);
-                        }
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            animatedElements.forEach(el => {
-                observer.observe(el);
-            });
-
-            const body = document.body;
-            let ticking = false;
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    window.requestAnimationFrame(() => {
-                        const yPos = window.scrollY;
-                        body.style.setProperty('--scroll-y', `${-yPos / 15}px`);
-                        ticking = false;
                     });
-                    ticking = true;
-                }
-            }, { passive: true });
+                }, {
+                    threshold: 0.1 // Анимация начнется, когда 10% элемента видно
+                });
+
+                animatedElements.forEach(el => {
+                    observer.observe(el);
+                });
+
+                // Анимация фона при прокрутке
+                const body = document.body;
+                let ticking = false;
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        window.requestAnimationFrame(() => {
+                            const yPos = window.scrollY;
+                            body.style.setProperty('--scroll-y', `${-yPos / 15}px`);
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                }, { passive: true });
+            }
         });
     </script>
 </body>
 </html>
-
