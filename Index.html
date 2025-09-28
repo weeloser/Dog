@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Собачье дело — Домашняя передержка собак в Туле и Тульской области</title>
     <meta name="description" content="Заботливая домашняя передержка для собак в Туле. Уютные условия без клеток, прогулки, фото-отчеты и индивидуальный уход. Бронируйте каникулы для вашего питомца!">
-    <meta name="keywords" content="передержка собак тула, домашняя передержка тула, оставить собаку тула, гостиница для собак тула, зооняня тула">
+    <meta name="keywords" content="передержка собак тула, домашняя передержка собак в туле, оставить собаку в туле на время отпуска, гостиница для собак тула, зооняня тула, зоогостиница в туле, временный дом для собаки тула, уход за собакой во время отпуска тула, присмотр за собакой тула, няня для собаки тула, догситтер в туле, передержка щенков тула, оставить собаку на выходные в туле, забота о собаке в туле, индивидуальная передержка собак тула, собачья няня тула, отель для собак тула, пристроить собаку на время тула">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🐾%3C/text%3E%3C/svg%3E">
     <meta name="google-site-verification" content="S1ohOcvpbjkBpbA7gxz_Vna0tULOV-Z7-AVKYlp2cYw" />
     <meta property="og:title" content="Собачье дело — Домашняя передержка в Туле">
@@ -135,7 +135,6 @@
     </style>
 </head>
 <body class="text-slate-800">
-<div id="main-page">
     <header class="max-w-6xl mx-auto p-4 sm:px-6 sm:py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-4 animated-element slide-in-left">
             <div class="w-12 h-12 bg-amber-300 rounded-2xl flex items-center justify-center text-2xl font-bold flex-shrink-0 logo-icon transition-transform duration-200">🐾</div>
@@ -251,74 +250,47 @@
             <p>© Собачье дело. Все права защищены. Использование материалов сайта возможно только с письменного разрешения правообладателя.</p>
         </footer>
     </main>
-</div>
-<div id="not-found-page" class="hidden">
-    <div class="min-h-screen flex flex-col items-center justify-center text-center p-6">
-        <h1 class="text-6xl font-extrabold text-amber-500 mb-4">404</h1>
-        <p class="text-2xl font-semibold text-slate-700 mb-2">Упс! Кажется, эта страница ушла гулять.</p>
-        <p class="text-slate-500 mb-8">Мы не смогли найти то, что вы искали.</p>
-        <a href="/" class="px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-600 cta-button">Вернуться на главную</a>
-    </div>
-</div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         document.body.style.opacity = 1;
-
-        const mainPage = document.getElementById('main-page');
-        const notFoundPage = document.getElementById('not-found-page');
-        const path = window.location.pathname;
-
-        if (path === '/' || path === '' || path.startsWith('/index.html')) {
-            mainPage.classList.remove('hidden');
-            notFoundPage.classList.add('hidden');
-        } else {
-            mainPage.classList.add('hidden');
-            notFoundPage.classList.remove('hidden');
-        }
-
-        if (!mainPage.classList.contains('hidden')) {
-            const animatedElements = document.querySelectorAll('.animated-element');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        const container = entry.target.closest('.stagger-container');
-                        if (container && !container.dataset.staggered) {
-                            container.dataset.staggered = 'true';
-                            const children = Array.from(container.querySelectorAll('.animated-element, .animated-icon'));
-                            children.forEach((child, index) => {
-                                child.style.transitionDelay = `${index * 120}ms`;
-                                child.style.animationDelay = `${index * 120 + 200}ms`;
-                            });
-                        }
-                        if (!entry.target.closest('.stagger-container')) {
-                            observer.unobserve(entry.target);
-                        }
+        const animatedElements = document.querySelectorAll('.animated-element');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    const container = entry.target.closest('.stagger-container');
+                    if (container && !container.dataset.staggered) {
+                        container.dataset.staggered = 'true';
+                        const children = Array.from(container.querySelectorAll('.animated-element, .animated-icon'));
+                        children.forEach((child, index) => {
+                            child.style.transitionDelay = `${index * 120}ms`;
+                            child.style.animationDelay = `${index * 120 + 200}ms`;
+                        });
                     }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            animatedElements.forEach(el => {
-                observer.observe(el);
-            });
-            
-            const body = document.body;
-            let ticking = false;
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    window.requestAnimationFrame(() => {
-                        const yPos = window.scrollY;
-                        body.style.setProperty('--scroll-y', `${-yPos / 15}px`);
-                        ticking = false;
-                    });
-                    ticking = true;
+                    if (!entry.target.closest('.stagger-container')) {
+                        observer.unobserve(entry.target);
+                    }
                 }
-            }, { passive: true });
-        }
+            });
+        }, {
+            threshold: 0.1
+        });
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+        const body = document.body;
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const yPos = window.scrollY;
+                    body.style.setProperty('--scroll-y', `${-yPos / 15}px`);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
     });
 </script>
 </body>
 </html>
-
