@@ -1,368 +1,113 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html><html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Собачье дело — Домашняя передержка собак в Туле и Тульской области</title>
-    
-    <!-- Основные SEO-теги -->
     <meta name="description" content="Заботливая домашняя передержка для собак в Туле. Уютные условия без клеток, прогулки, фото-отчеты и индивидуальный уход. Бронируйте каникулы для вашего питомца!">
     <meta name="keywords" content="передержка собак тула, домашняя передержка тула, оставить собаку тула, гостиница для собак тула, зооняня тула">
-    
-    <!-- Favicon (иконка вкладки) в виде лапки -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E🐾%3C/text%3E%3C/svg%3E">
-
-    <!-- Google Verification Tag -->
     <meta name="google-site-verification" content="S1ohOcvpbjkBpbA7gxz_Vna0tULOV-Z7-AVKYlp2cYw" />
-
-    <!-- Open Graph / Facebook Meta Tags (для красивых ссылок в соцсетях и мессенджерах) -->
     <meta property="og:title" content="Собачье дело — Домашняя передержка в Туле">
     <meta property="og:description" content="Уютные каникулы для вашего питомца! Без клеток, с любовью и заботой.">
     <meta property="og:image" content="https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png">
     <meta property="og:url" content="https://hvost.netlify.app">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Собачье дело">
-
-    <!-- JSON-LD Structured Data (для "умного" отображения в поиске) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Собачье дело",
-      "description": "Профессиональная домашняя передержка собак в Туле и Тульской области. Индивидуальный уход, прогулки, фото-отчеты.",
-      "image": "https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png",
-      "telephone": "+79539614167",
-      "url": "https://hvost.netlify.app",
-      "priceRange": "От 780 ₽",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Тула",
-        "addressCountry": "RU"
-      },
-      "openingHours": "Mo-Su 00:00-23:59"
-    }
-    </script>
-    
-    <!-- Подключение Tailwind CSS и шрифтов -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Собачье дело","description":"Профессиональная домашняя передержка собак в Туле и Тульской области. Индивидуальный уход, прогулки, фото-отчеты.","image":"https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png","telephone":"+79539614167","url":"https://hvost.netlify.app","priceRange":"От 780 ₽","address":{"@type":"PostalAddress","addressLocality":"Тула","addressCountry":"RU"},"openingHours":"Mo-Su 00:00-23:59"}</script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Стили -->
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            background: linear-gradient(-45deg, #FFFCF5, #FFF9E6, #FEF3C7, #FFFCF5);
-            background-size: 400% 400%;
-            animation: gradient-flow 25s ease infinite;
-            --scroll-y: 0;
-        }
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='rgba(251, 191, 36, 0.08)' transform='rotate(20 50 50)'%3E%3Cellipse cx='50' cy='65' rx='18' ry='14'/%3E%3Ccircle cx='28' cy='38' r='8'/%3E%3Ccircle cx='50' cy='30' r='8'/%3E%3Ccircle cx='72' cy='38' r='8'/%3E%3C/g%3E%3C/svg%3E");
-            background-repeat: repeat;
-            background-size: 200px 200px;
-            z-index: -1;
-            will-change: background-position;
-            background-position-y: var(--scroll-y);
-        }
-        @keyframes gradient-flow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        /* Улучшенная структура анимаций появления */
-        .animated-element {
-            opacity: 0;
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
-        .slide-up { transform: translateY(30px); }
-        .slide-in-left { transform: translateX(-30px); }
-        .slide-in-right { transform: translateX(30px); }
-        .scale-in { transform: scale(0.95); }
-        .is-visible {
-            opacity: 1;
-            transform: translate(0, 0) scale(1);
-        }
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 8px 0px rgba(251, 191, 36, 0.4); }
-            50% { box-shadow: 0 0 16px 4px rgba(251, 191, 36, 0.5); }
-        }
-        .cta-pulse { animation: pulse-glow 3s infinite ease-in-out; }
-        details > p {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s cubic-bezier(0.2, 0, 0, 1);
-        }
-        details[open] > p { max-height: 200px; }
-        @keyframes tail-wag {
-            0% { transform: rotate(-8deg) scale(1.05); }
-            100% { transform: rotate(8deg) scale(1.05); }
-        }
-        .logo-icon:hover { animation: tail-wag 0.4s ease-in-out infinite alternate; }
-        .cta-button {
-            transition: transform 0.15s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.15s ease, filter 0.15s ease;
-        }
-        .cta-button:active {
-            transform: scale(0.96) translateY(1px);
-            filter: brightness(0.92);
-        }
-        @keyframes icon-pop {
-            0% { transform: scale(0.5); opacity: 0; }
-            70% { transform: scale(1.1); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        .animated-icon {
-            display: inline-block;
-            animation-fill-mode: forwards;
-            opacity: 0;
-            transform-origin: center center;
-        }
-        .is-visible .animated-icon {
-            animation-name: icon-pop;
-            animation-duration: 0.5s;
-            animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            animation-delay: inherit;
-        }
+        html {scroll-behavior: smooth;}
+        body {font-family: 'Inter', sans-serif;overflow-x: hidden;background: linear-gradient(-45deg,#FFFCF5,#FFF9E6,#FEF3C7,#FFFCF5);background-size:400% 400%;animation:gradient-flow 25s ease infinite;--scroll-y:0;}
+        body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='rgba(251, 191, 36, 0.08)' transform='rotate(20 50 50)'%3E%3Cellipse cx='50' cy='65' rx='18' ry='14'/%3E%3Ccircle cx='28' cy='38' r='8'/%3E%3Ccircle cx='50' cy='30' r='8'/%3E%3Ccircle cx='72' cy='38' r='8'/%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat;background-size:200px 200px;z-index:-1;will-change:background-position;background-position-y:var(--scroll-y);}
+        @keyframes gradient-flow{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+        .animated-element{opacity:0;transition:opacity 1s cubic-bezier(0.16,1,0.3,1),transform 1s cubic-bezier(0.16,1,0.3,1);will-change:opacity,transform;}
+        .slide-up{transform:translateY(40px);}
+        .slide-in-left{transform:translateX(-40px);}
+        .slide-in-right{transform:translateX(40px);}
+        .scale-in{transform:scale(0.92);}
+        .is-visible{opacity:1;transform:translate(0,0) scale(1);}
+        @keyframes pulse-glow{0%,100%{box-shadow:0 0 10px 0 rgba(251,191,36,0.4);}50%{box-shadow:0 0 20px 6px rgba(251,191,36,0.55);}}
+        .cta-pulse{animation:pulse-glow 3s infinite ease-in-out;}
+        details>p{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(0.2,0,0,1);}
+        details[open]>p{max-height:200px;}
+        @keyframes tail-wag{0%{transform:rotate(-10deg) scale(1.05);}100%{transform:rotate(10deg) scale(1.05);}}
+        .logo-icon:hover{animation:tail-wag .4s ease-in-out infinite alternate;}
+        .cta-button{transition:transform .2s cubic-bezier(0.2,0,0,1),box-shadow .2s ease,filter .2s ease;}
+        .cta-button:active{transform:scale(0.95) translateY(1px);filter:brightness(0.9);}
+        @keyframes icon-pop{0%{transform:scale(0.5);opacity:0;}70%{transform:scale(1.1);}100%{transform:scale(1);opacity:1;}}
+        .animated-icon{display:inline-block;animation-fill-mode:forwards;opacity:0;transform-origin:center center;}
+        .is-visible .animated-icon{animation-name:icon-pop;animation-duration:.5s;animation-timing-function:cubic-bezier(0.25,0.46,0.45,0.94);animation-delay:inherit;}
     </style>
 </head>
 <body class="text-slate-800">
-
-    <!-- Контейнер для основного содержимого страницы -->
-    <div id="main-page">
-        <div class="min-h-screen">
-            <header class="max-w-5xl mx-auto p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div class="flex items-center gap-4 animated-element slide-in-left">
-                    <div class="w-12 h-12 bg-amber-300 rounded-2xl flex items-center justify-center text-2xl font-bold flex-shrink-0 logo-icon transition-transform duration-200">🐾</div>
-                    <div>
-                        <h1 class="text-xl sm:text-2xl font-extrabold">Собачье дело</h1>
-                        <p class="text-sm text-slate-500">Профессиональный уход и забота в Туле.</p>
+<div id="main-page">
+    <div class="min-h-screen">
+        <header class="max-w-5xl mx-auto p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-4 animated-element slide-in-left">
+                <div class="w-12 h-12 bg-amber-300 rounded-2xl flex items-center justify-center text-2xl font-bold flex-shrink-0 logo-icon">🐾</div>
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-extrabold">Собачье дело</h1>
+                    <p class="text-sm text-slate-500">Профессиональный уход и забота в Туле.</p>
+                </div>
+            </div>
+            <nav class="flex gap-3 items-center animated-element slide-in-right">
+                <a href="tel:+79539614167" class="px-4 py-2 rounded-lg border border-amber-300 text-sm font-medium hover:bg-amber-100 cta-button">Позвонить</a>
+                <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-amber-500 text-white text-sm font-medium hover:bg-amber-600 cta-button">Написать в WhatsApp</a>
+            </nav>
+        </header>
+        <main class="max-w-5xl mx-auto p-4 sm:p-6">
+            <section class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 mb-6 animated-element scale-in">
+                <div class="md:flex md:items-center md:gap-8">
+                    <div class="flex-1 animated-element slide-in-left" style="transition-delay:200ms;">
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-3 leading-tight">Собачье дело: каникулы для вашего друга</h2>
+                        <p class="text-slate-600 leading-relaxed mb-6">Планируете отпуск, а тревожная мысль: "С кем оставить моего самого лучшего, самого любимого, самого хорошего мальчика/девочку?" — портит весь настрой? Хватит это терпеть! Отправьте своего хвостика не на передержку, а на настоящие собачьи каникулы.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-600 cta-pulse cta-button">Забронировать в WhatsApp</a>
+                            <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl border border-amber-300 hover:bg-amber-100 cta-button">Написать в Telegram</a>
+                        </div>
+                    </div>
+                    <div class="mt-8 md:mt-0 md:w-80 lg:w-96 flex-shrink-0 h-64 sm:h-auto md:h-80 animated-element slide-in-right" style="transition-delay:300ms;">
+                        <div class="w-full h-full rounded-2xl overflow-hidden shadow-md group">
+                            <img src="https://i.postimg.cc/28z4Jkms/Picsart-25-09-28-22-09-02-273.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
                     </div>
                 </div>
-                <nav class="flex gap-3 items-center animated-element slide-in-right">
-                    <a href="tel:+79539614167" class="px-4 py-2 rounded-lg border border-amber-300 text-sm font-medium hover:bg-amber-100 cta-button">Позвонить</a>
-                    <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-amber-500 text-white text-sm font-medium hover:bg-amber-600 cta-button">Написать в WhatsApp</a>
-                </nav>
-            </header>
-
-            <main class="max-w-5xl mx-auto p-4 sm:p-6">
-                
-                <section class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 mb-6 animated-element scale-in">
-                    <div class="md:flex md:items-center md:gap-8">
-                        <div class="flex-1 animated-element slide-in-left" style="transition-delay: 200ms;">
-                            <h2 class="text-3xl lg:text-4xl font-bold mb-3 leading-tight">Собачье дело: каникулы для вашего друга</h2>
-                            <p class="text-slate-600 leading-relaxed mb-6">Планируете отпуск, а тревожная мысль: "С кем оставить моего самого лучшего, самого любимого, самого хорошего мальчика/девочку?" — портит весь настрой? Хватит это терпеть! Отправьте своего хвостика не на передержку, а на настоящие собачьи каникулы.</p>
-                            <div class="flex flex-wrap gap-3">
-                                <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-600 cta-pulse cta-button">Забронировать в WhatsApp</a>
-                                <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl border border-amber-300 hover:bg-amber-100 cta-button">Написать в Telegram</a>
-                            </div>
-                        </div>
-
-                        <div class="mt-8 md:mt-0 md:w-80 lg:w-96 flex-shrink-0 h-64 sm:h-auto md:h-80 animated-element slide-in-right" style="transition-delay: 300ms;">
-                             <div class="w-full h-full rounded-2xl overflow-hidden shadow-md group">
-                                <img src='https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png' alt="Счастливый пёс на траве" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="grid md:grid-cols-3 gap-4 mb-6 stagger-container">
-                    <article class="bg-white/70 backdrop-blur-sm p-5 rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animated-element slide-up">
-                        <h3 class="font-semibold mb-2 text-lg">🐾 Лежание на диване со смыслом</h3>
-                        <p class="text-sm text-slate-600">Просмотр фильмов про отважных собак, глубокомысленные вздохи и сладкая дрёма. Мягкие подушки и персональные одеяла — для каждого гостя.</p>
-                    </article>
-
-                    <article class="bg-white/70 backdrop-blur-sm p-5 rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animated-element slide-up">
-                        <h3 class="font-semibold mb-2 text-lg">🌳 Двухразовый патруль района</h3>
-                        <p class="text-sm text-slate-600">Исследуем все кусты, знакомимся с местными запахами и оставляем свои "сообщения". Прогулки подстраиваются под темперамент.</p>
-                    </article>
-
-                    <article class="bg-white/70 backdrop-blur-sm p-5 rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animated-element slide-up">
-                        <h3 class="font-semibold mb-2 text-lg">🍖 Ресторанное обслуживание</h3>
-                        <p class="text-sm text-slate-600">Питание по Вашему меню и в привычное время. Никаких "у нас этого нет" — только любимые лакомства и правильные порции.</p>
-                    </article>
-                </section>
-
-                <section class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg mb-6 animated-element slide-up">
-                    <h3 class="text-2xl font-bold mb-4">Что ещё включено</h3>
-                    <ul class="text-slate-600 space-y-3 stagger-container">
-                        <li class="animated-element slide-in-left flex items-start">
-                            <span class="animated-icon mr-3 text-xl leading-tight">❤️</span>
-                            <span>Чесание за ушком non-stop (включено в базовый тариф).</span>
-                        </li>
-                        <li class="animated-element slide-in-left flex items-start">
-                            <span class="animated-icon mr-3 text-xl leading-tight">📸</span>
-                            <span>Ежедневные фото и видео счастливого питомца прямо в вашем телефоне.</span>
-                        </li>
-                        <li class="animated-element slide-in-left flex items-start">
-                            <span class="animated-icon mr-3 text-xl leading-tight">🛏️</span>
-                            <span>Мягкие диваны и персональное место для сна (без клеток и ограничений).</span>
-                        </li>
-                        <li class="animated-element slide-in-left flex items-start">
-                            <span class="animated-icon mr-3 text-xl leading-tight">🩺</span>
-                            <span>Безопасность и забота 24/7 — только неагрессивные, привитые питомцы.</span>
-                        </li>
-                    </ul>
-                </section>
-
-                <section class="grid md:grid-cols-2 gap-4 mb-6">
-                    <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-md animated-element slide-in-left">
-                        <h3 class="text-xl font-semibold mb-2">О нас</h3>
-                        <p class="text-slate-600 mb-3">Мы — команда профессиональных обнимателей собак, сертифицированных специалистов по бросанию мячика и главных амбассадоров собачьего счастья. Ваш питомец будет окружен заботой, лаской и безопасностью 24/7.</p>
-                        <p class="text-sm text-slate-500">Мы работаем индивидуально, следим за рационом и настроением каждого гостя.</p>
-                    </div>
-
-                    <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-md animated-element slide-in-right">
-                        <h3 class="text-xl font-semibold mb-2">Стоимость путевки</h3>
-                        <p class="text-3xl font-bold text-amber-500 mb-2">От 780 ₽ / сутки</p>
-                        <p class="text-slate-600 mb-3">Полный пансион и хвост виляющий от радости. Места ограничены — мягкий диван только для дружелюбных гостей.</p>
-                        <p class="text-sm text-slate-500">Условия: прививки, обработка от паразитов, ненападающее поведение.</p>
-                    </div>
-                </section>
-
-                <section class="bg-amber-100 p-6 rounded-2xl shadow-inner border border-amber-200 mb-6 animated-element scale-in">
-                    <h3 class="text-2xl font-bold mb-3 text-amber-800">ВАЖНО</h3>
-                    <p class="text-slate-700 mb-4">Количество мест на мягком диване ограничено! Мы принимаем только неагрессивных, привитых и обработанных от паразитов собак.</p>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl bg-amber-600 text-white font-semibold hover:bg-amber-700 cta-pulse cta-button">Забронировать (WhatsApp)</a>
-                        <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-5 py-3 rounded-xl border border-amber-400 text-amber-800 hover:bg-amber-200 cta-button">Telegram</a>
-                    </div>
-                </section>
-
-                <section class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-md mb-12 animated-element slide-up">
-                    <h3 class="text-xl font-semibold mb-4">Часто задаваемые вопросы</h3>
-                    <div class="space-y-3">
-                        <details class="group">
-                            <summary class="font-medium cursor-pointer list-none flex justify-between items-center transition-colors duration-300 hover:text-amber-600">
-                                Можно ли оставить питомца на несколько недель?
-                                <span class="transition-transform duration-300 group-open:-rotate-180 text-amber-500">▼</span>
-                            </summary>
-                            <p class="text-slate-600 mt-2 p-3 bg-amber-50/50 rounded-md">Да — по предварительной договорённости. Длительные заезды оговариваются отдельно.</p>
-                        </details>
-                        <hr>
-                        <details class="group">
-                            <summary class="font-medium cursor-pointer list-none flex justify-between items-center transition-colors duration-300 hover:text-amber-600">
-                                Что делать с лекарствами?
-                                 <span class="transition-transform duration-300 group-open:-rotate-180 text-amber-500">▼</span>
-                            </summary>
-                            <p class="text-slate-600 mt-2 p-3 bg-amber-50/50 rounded-md">Оставьте инструкцию и лекарство. Мы даем лекарства по расписанию и документально фиксируем приём.</p>
-                        </details>
-                         <hr>
-                        <details class="group">
-                            <summary class="font-medium cursor-pointer list-none flex justify-between items-center transition-colors duration-300 hover:text-amber-600">
-                                Как Вы присылаете фото-отчёты?
-                                 <span class="transition-transform duration-300 group-open:-rotate-180 text-amber-500">▼</span>
-                            </summary>
-                            <p class="text-slate-600 mt-2 p-3 bg-amber-50/50 rounded-md">Через WhatsApp/Telegram — по Вашему желанию: ежедневные короткие ролики и фото-пачки.</p>
-                        </details>
-                    </div>
-                </section>
-                
-                <section id="map-location" class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg mb-12 animated-element slide-up">
-                    <h3 class="text-2xl font-bold mb-4 text-center">Как нас найти</h3>
-                    <p class="text-center text-slate-600 mb-6 max-w-2xl mx-auto">Находимся в удобном и тихом месте. Вы всегда можете приехать и посмотреть условия. Пожалуйста, договоритесь о визите заранее по телефону.</p>
-                    <div class="rounded-2xl overflow-hidden shadow-md border border-slate-200/50">
-                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afe7891560a9668271fd0d27abd5b65674991c50f508218fd566e5c0ad8f17c9f&amp;source=constructor" width="100%" height="450" frameborder="0"></iframe>
-                    </div>
-                </section>
-
-                <footer class="text-center text-sm text-slate-500 pb-6 animated-element scale-in">
-                    <p>© Собачье дело. Все права защищены. Использование материалов сайта возможно только с письменного разрешения правообладателя.</p>
-                </footer>
-
-            </main>
-        </div>
+            </section>
+            <section class="grid md:grid-cols-2 gap-4 mb-6">
+                <div class="w-full h-80 rounded-2xl overflow-hidden shadow-md group animated-element slide-in-left">
+                    <img src="https://i.postimg.cc/1zxXkBwN/Picsart-25-09-25-20-32-27-572.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="w-full h-80 rounded-2xl overflow-hidden shadow-md group animated-element slide-in-right">
+                    <img src="https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+            </section>
+        </main>
     </div>
-    
-    <!-- Контейнер для страницы 404 (скрыт по умолчанию) -->
-    <div id="not-found-page" class="hidden">
-        <div class="min-h-screen flex flex-col items-center justify-center text-center p-6">
-            <h1 class="text-6xl font-extrabold text-amber-500 mb-4">404</h1>
-            <p class="text-2xl font-semibold text-slate-700 mb-2">Упс! Кажется, эта страница ушла гулять.</p>
-            <p class="text-slate-500 mb-8">Мы не смогли найти то, что вы искали.</p>
-            <a href="/" class="px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-600 cta-button">Вернуться на главную</a>
-        </div>
+</div>
+<div id="not-found-page" class="hidden">
+    <div class="min-h-screen flex flex-col items-center justify-center text-center p-6">
+        <h1 class="text-6xl font-extrabold text-amber-500 mb-4">404</h1>
+        <p class="text-2xl font-semibold text-slate-700 mb-2">Упс! Кажется, эта страница ушла гулять.</p>
+        <p class="text-slate-500 mb-8">Мы не смогли найти то, что вы искали.</p>
+        <a href="/" class="px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold hover:bg-amber-600 cta-button">Вернуться на главную</a>
     </div>
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            
-            // --- Секция маршрутизации (определяет, какую страницу показать) ---
-            const mainPage = document.getElementById('main-page');
-            const notFoundPage = document.getElementById('not-found-page');
-            const path = window.location.pathname;
-
-            // Если путь - это главная страница ('/' или пустой), показываем основное содержимое.
-            // В противном случае показываем страницу 404.
-            if (path === '/' || path === '' || path.startsWith('/index.html')) {
-                mainPage.classList.remove('hidden');
-                notFoundPage.classList.add('hidden');
-            } else {
-                mainPage.classList.add('hidden');
-                notFoundPage.classList.remove('hidden');
-            }
-
-            // --- Секция анимаций (работает только если показана главная страница) ---
-            if (!mainPage.classList.contains('hidden')) {
-                const animatedElements = document.querySelectorAll('.animated-element');
-                
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            
-                            // Для "ступенчатой" анимации элементов в контейнере
-                            const container = entry.target.closest('.stagger-container');
-                            if (container && !container.dataset.staggered) {
-                                container.dataset.staggered = 'true';
-                                const children = Array.from(container.querySelectorAll('.animated-element, .animated-icon'));
-                                children.forEach((child, index) => {
-                                    child.style.transitionDelay = `${index * 100}ms`;
-                                    child.style.animationDelay = `${index * 100 + 200}ms`;
-                                });
-                            }
-                            
-                            // Отключаем наблюдение за элементом после того, как он стал видимым
-                            if (!entry.target.closest('.stagger-container')) {
-                                observer.unobserve(entry.target);
-                            }
-                        }
-                    });
-                }, {
-                    threshold: 0.1 // Анимация начнется, когда 10% элемента видно
-                });
-
-                animatedElements.forEach(el => {
-                    observer.observe(el);
-                });
-
-                // Анимация фона при прокрутке
-                const body = document.body;
-                let ticking = false;
-                window.addEventListener('scroll', () => {
-                    if (!ticking) {
-                        window.requestAnimationFrame(() => {
-                            const yPos = window.scrollY;
-                            body.style.setProperty('--scroll-y', `${-yPos / 15}px`);
-                            ticking = false;
-                        });
-                        ticking = true;
-                    }
-                }, { passive: true });
-            }
-        });
-    </script>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+        const mainPage=document.getElementById('main-page');
+        const notFoundPage=document.getElementById('not-found-page');
+        const path=window.location.pathname;
+        if(path==='/'||path===''||path.startsWith('/index.html')){mainPage.classList.remove('hidden');notFoundPage.classList.add('hidden');}else{mainPage.classList.add('hidden');notFoundPage.classList.remove('hidden');}
+        if(!mainPage.classList.contains('hidden')){
+            const animatedElements=document.querySelectorAll('.animated-element');
+            const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');const container=entry.target.closest('.stagger-container');if(container&&!container.dataset.staggered){container.dataset.staggered='true';const children=Array.from(container.querySelectorAll('.animated-element,.animated-icon'));children.forEach((child,index)=>{child.style.transitionDelay=`${index*120}ms`;child.style.animationDelay=`${index*120+200}ms`;});}if(!entry.target.closest('.stagger-container')){observer.unobserve(entry.target);}}});},{threshold:0.1});
+            animatedElements.forEach(el=>{observer.observe(el);});
+            const body=document.body;let ticking=false;window.addEventListener('scroll',()=>{if(!ticking){window.requestAnimationFrame(()=>{const yPos=window.scrollY;body.style.setProperty('--scroll-y',`${-yPos/15}px`);ticking=false;});ticking=true;}},{passive:true});
+        }
+    });
+</script>
 </body>
 </html>
