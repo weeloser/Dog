@@ -47,6 +47,8 @@
             background-size: 400% 400%;
             animation: gradient-flow 30s ease infinite;
             --scroll-y: 0;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
         }
         body::before {
             content: '';
@@ -130,20 +132,6 @@
             animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
             animation-delay: inherit;
         }
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            transition: all 0.4s cubic-bezier(0.2, 0, 0, 1);
-        }
-        header.scrolled {
-            background-color: rgba(255, 252, 245, 0.85);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid rgba(251, 191, 36, 0.2);
-        }
     </style>
 </head>
 <body class="text-slate-800">
@@ -172,9 +160,17 @@
                         <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-6 py-3 rounded-xl border-2 border-amber-300 hover:bg-amber-100/80 cta-button font-semibold">Написать в Telegram</a>
                     </div>
                 </div>
-                <div class="mt-8 md:mt-0 md:w-80 lg:w-96 flex-shrink-0 h-72 md:h-96 animated-element slide-in-right" style="transition-delay: 300ms;">
-                    <div class="w-full h-full rounded-2xl overflow-hidden shadow-xl group">
-                        <img src='https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png' alt="Счастливый пёс на траве" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="mt-8 md:mt-0 md:w-80 lg:w-96 flex-shrink-0 animated-element slide-in-right" style="transition-delay: 300ms;">
+                    <div class="grid grid-cols-2 gap-4 h-72 md:h-96">
+                        <div class="col-span-2 group rounded-2xl overflow-hidden shadow-xl">
+                            <img src='https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png' alt="Счастливый пёс на траве" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                         <div class="group rounded-2xl overflow-hidden shadow-xl">
+                            <img src='https://i.postimg.cc/28z4Jkms/Picsart-25-09-28-22-09-02-273.png' alt='Светло-кремовая собака' class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                        </div>
+                        <div class="group rounded-2xl overflow-hidden shadow-xl">
+                             <img src='https://i.postimg.cc/1zxXkBwN/Picsart-25-09-25-20-32-27-572.jpg' alt='Немецкая овчарка' class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -213,21 +209,6 @@
                 <p class="text-3xl font-bold text-amber-500 mb-2">От 780 ₽ / сутки</p>
                 <p class="text-slate-600 mb-3">Полный пансион и хвост виляющий от радости. Места ограничены — мягкий диван только для дружелюбных гостей.</p>
                 <p class="text-sm text-slate-500">Условия: прививки, обработка от паразитов, ненападающее поведение.</p>
-            </div>
-        </section>
-        <section class="animated-element slide-up mb-8">
-            <h3 class="text-3xl font-bold mb-6 text-center">Наши гости</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                <div class="group rounded-2xl overflow-hidden shadow-lg transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-                    <a href='https://postimg.cc/bdBDSjZg' target='_blank'>
-                        <img src='https://i.postimg.cc/28z4Jkms/Picsart-25-09-28-22-09-02-273.png' border='0' alt='Светло-кремовая собака' class="w-full h-full object-cover aspect-square transition-transform duration-500 group-hover:scale-110"/>
-                    </a>
-                </div>
-                <div class="group rounded-2xl overflow-hidden shadow-lg transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-                    <a href='https://postimg.cc/K1NmLn9Z' target='_blank'>
-                        <img src='https://i.postimg.cc/1zxXkBwN/Picsart-25-09-25-20-32-27-572.jpg' border='0' alt='Немецкая овчарка' class="w-full h-full object-cover aspect-square transition-transform duration-500 group-hover:scale-110"/>
-                    </a>
-                </div>
             </div>
         </section>
         <section class="bg-amber-100 p-6 rounded-2xl shadow-inner border border-amber-200 mb-8 animated-element scale-in">
@@ -279,9 +260,12 @@
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        document.body.style.opacity = 1;
+
         const mainPage = document.getElementById('main-page');
         const notFoundPage = document.getElementById('not-found-page');
         const path = window.location.pathname;
+
         if (path === '/' || path === '' || path.startsWith('/index.html')) {
             mainPage.classList.remove('hidden');
             notFoundPage.classList.add('hidden');
@@ -289,6 +273,7 @@
             mainPage.classList.add('hidden');
             notFoundPage.classList.remove('hidden');
         }
+
         if (!mainPage.classList.contains('hidden')) {
             const animatedElements = document.querySelectorAll('.animated-element');
             const observer = new IntersectionObserver((entries) => {
@@ -312,22 +297,18 @@
             }, {
                 threshold: 0.1
             });
+
             animatedElements.forEach(el => {
                 observer.observe(el);
             });
+            
             const body = document.body;
-            const header = document.querySelector('header');
             let ticking = false;
             window.addEventListener('scroll', () => {
                 if (!ticking) {
                     window.requestAnimationFrame(() => {
                         const yPos = window.scrollY;
                         body.style.setProperty('--scroll-y', `${-yPos / 15}px`);
-                        if (yPos > 20) {
-                           header.classList.add('scrolled');
-                        } else {
-                           header.classList.remove('scrolled');
-                        }
                         ticking = false;
                     });
                     ticking = true;
@@ -338,3 +319,4 @@
 </script>
 </body>
 </html>
+
