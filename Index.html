@@ -39,6 +39,8 @@
 .photo-gallery{-webkit-mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent);mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent)}.gallery-track{display:flex;width:fit-content;will-change:transform}.scrolling .gallery-track{animation:scroll var(--scroll-duration,20s) linear infinite}@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(var(--scroll-distance))}}.photo-item{position:relative;overflow:hidden;transition:box-shadow .3s ease-in-out, transform .3s ease-in-out}.photo-item::after{content:'';position:absolute;top:-50%;left:-75%;width:50%;height:200%;background:linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,.4) 50%,rgba(255,255,255,0) 100%);transform:skewX(-25deg);transition:transform .8s cubic-bezier(.2,0,0,1);transform-origin:center}.photo-item:hover{box-shadow:0 0 8px 2px rgba(251,191,36,.6),0 0 16px 4px rgba(251,191,36,.4); transform: scale(1.03);}.photo-item:hover::after{transform:translateX(300%) skewX(-25deg)}@media(hover:hover){.scrolling:hover .gallery-track{animation-play-state:paused}}
 #dog-facts-section{min-height:220px;display:flex;flex-direction:column;justify-content:center;position:relative}#dog-fact-text{min-height:80px;transition:opacity .3s ease-in-out}
 @keyframes fade-in-up{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}.fade-in-up{animation:fade-in-up .6s ease-out forwards}
+.bg-amber-700{--tw-bg-opacity:1;background-color:rgb(180 83 9 / var(--tw-bg-opacity))}
+.hover\:bg-amber-800:hover{--tw-bg-opacity:1;background-color:rgb(146 64 14 / var(--tw-bg-opacity))}
 @media (min-width: 640px){.sm\:w-auto{width:auto}.sm\:w-1\/3{width:33.333333%}.sm\:flex-row{flex-direction:row}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:py-4{padding-top:1rem;padding-bottom:1rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:p-8{padding:2rem}}@media (min-width: 768px){.md\:grid{display:grid}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:items-center{align-items:center}.md\:gap-8{gap:2rem}.md\:flex-row{flex-direction:row}}@media (min-width: 1024px){.lg\:text-5xl{font-size:3rem;line-height:1}}</style>
 </head>
 <body class="text-slate-800">
@@ -47,7 +49,7 @@
     </div>
     <header class="max-w-6xl mx-auto p-4 sm:px-6 sm:py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-4 animated-element slide-in-left">
-            <img src="https://i.postimg.cc/BQ8gc3xN/image.jpg" alt="Логотип Собачье дело" class="w-12 h-12 rounded-2xl logo-icon transition-transform duration-200 flex-shrink-0" decoding="async" loading="lazy" width="48" height="48">
+            <img src="https://i.postimg.cc/BQ8gc3xN/image.jpg" alt="Логотип Собачье дело" class="w-12 h-12 rounded-2xl logo-icon transition-transform duration-200 flex-shrink-0" decoding="async" loading="eager" width="48" height="48">
             <div>
                 <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight animated-gradient-text">Собачье дело</h1>
                 <p class="text-sm text-slate-600">Профессиональный уход и забота в Туле.</p>
@@ -55,7 +57,7 @@
         </div>
         <nav class="flex gap-6 items-center animated-element slide-in-right">
             <a href="tel:+79539614167" class="px-4 py-2 rounded-lg border border-amber-300 text-sm font-medium hover:bg-amber-100/80 cta-button">Позвонить</a>
-            <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-amber-600 text-white text-sm font-medium shadow-md shadow-amber-500/30 hover:bg-amber-700 cta-button">Написать в WhatsApp</a>
+            <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-amber-700 text-white text-sm font-medium shadow-md shadow-amber-500/30 hover:bg-amber-800 cta-button">Написать в WhatsApp</a>
         </nav>
     </header>
     <main class="max-w-5xl mx-auto p-4 sm:p-6">
@@ -65,7 +67,7 @@
                     <h2 class="text-3xl lg:text-5xl font-extrabold mb-4 leading-tight tracking-tight animated-gradient-text">Собачье дело: каникулы для вашего друга</h2>
                     <p class="text-slate-600 leading-relaxed mb-8">Планируете отпуск, а тревожная мысль: "С кем оставить моего самого лучшего, самого любимого, самого хорошего мальчика/девочку?" — портит весь настрой? Хватит это терпеть! Отправьте своего хвостика не на передержку, а на настоящие собачьи каникулы.</p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-amber-600 text-white font-semibold shadow-lg shadow-amber-500/40 hover:bg-amber-700 cta-pulse cta-button shimmer-button">Забронировать в WhatsApp</a>
+                        <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-amber-700 text-white font-semibold shadow-lg shadow-amber-500/40 hover:bg-amber-800 cta-pulse cta-button shimmer-button">Забронировать в WhatsApp</a>
                         <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl border-2 border-amber-300 hover:bg-amber-100/80 cta-button font-semibold shimmer-button">Написать в Telegram</a>
                     </div>
                 </div>
@@ -76,8 +78,9 @@
                                 <img src="https://i.postimg.cc/YqPNDPpZ/image.webp" 
                                      alt="Хаски по кличке Стив, счастливая собака на траве" 
                                      class="w-full h-96 object-cover" 
+                                     style="aspect-ratio: 568 / 800;"
                                      width="568" height="800" 
-                                     loading="eager" fetchpriority="high" decoding="async">
+                                     loading="eager" fetchpriority="high">
                             </div>
                             <div class="photo-item shrink-0 w-4/5 sm:w-80 rounded-2xl overflow-hidden shadow-xl">
                                 <img src="https://i.postimg.cc/s2rhtdbY/image.webp" 
@@ -138,7 +141,7 @@
             <h3 class="text-2xl font-bold mb-3 text-amber-800">ВАЖНО</h3>
             <p class="text-slate-700 mb-6">Количество мест на мягком диване ограничено! Мы принимаем только неагрессивных, привитых и обработанных от паразитов собак.</p>
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-amber-600 text-white font-semibold shadow-lg shadow-amber-600/30 hover:bg-amber-700 cta-pulse cta-button shimmer-button">Забронировать (WhatsApp)</a>
+                <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-amber-700 text-white font-semibold shadow-lg shadow-amber-600/30 hover:bg-amber-800 cta-pulse cta-button shimmer-button">Забронировать (WhatsApp)</a>
                 <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl border-2 border-amber-400 text-amber-800 font-semibold hover:bg-amber-200 cta-button shimmer-button">Telegram</a>
             </div>
         </section>
@@ -370,4 +373,3 @@
 </script>
 </body>
 </html>
-
