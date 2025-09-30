@@ -41,12 +41,25 @@
 @media (min-width: 640px){.sm\:w-auto{width:auto}.sm\:w-1\/3{width:33.333333%}.sm\:flex-row{flex-direction:row}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:py-4{padding-top:1rem;padding-bottom:1rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:p-8{padding:2rem}}@media (min-width: 768px){.md\:grid{display:grid}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:items-center{align-items:center}.md\:gap-8{gap:2rem}.md\:flex-row{flex-direction:row}}@media (min-width: 1024px){.lg\:text-5xl{font-size:3rem;line-height:1}}</style>
 </head>
 <body class="text-slate-800">
+
+    <!-- 
+    ВАЖНОЕ ЗАМЕЧАНИЕ ПО ОПТИМИЗАЦИИ:
+    Основная проблема низкой производительности (особенно на мобильных устройствах) — это очень большие размеры изображений.
+    Чтобы достичь 99-100 баллов, НЕОБХОДИМО сделать следующее:
+    1.  Оптимизировать все изображения перед загрузкой на хостинг. Используйте онлайн-сервисы, такие как Squoosh или TinyPNG.
+    2.  Изменить размер изображений до того, как они будут отображаться на сайте. Например, для галереи достаточно ширины ~600px, а для логотипа — 100px.
+    3.  Сохранить изображения в современном формате, например WebP. Он обеспечивает лучшее сжатие при том же качестве.
+    
+    Я добавил в теги <img> атрибуты width и height, чтобы браузер заранее знал размеры и не было сдвигов макета.
+    Также я исправил проблему с контрастностью кнопок. Но без оптимизации самих файлов изображений кардинального роста скорости не будет.
+    -->
+
     <div id="preloader">
         <div class="spinner"></div>
     </div>
     <header class="max-w-6xl mx-auto p-4 sm:px-6 sm:py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-4 animated-element slide-in-left">
-            <img src="https://i.postimg.cc/6qQJMMLn/Picsart-25-09-29-00-28-59-384.jpg" alt="Логотип Собачье дело" class="w-12 h-12 rounded-2xl logo-icon transition-transform duration-200 flex-shrink-0" decoding="async">
+            <img src="https://i.postimg.cc/6qQJMMLn/Picsart-25-09-29-00-28-59-384.jpg" alt="Логотип Собачье дело" class="w-12 h-12 rounded-2xl logo-icon transition-transform duration-200 flex-shrink-0" decoding="async" width="48" height="48">
             <div>
                 <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight animated-gradient-text">Собачье дело</h1>
                 <p class="text-sm text-slate-600">Профессиональный уход и забота в Туле.</p>
@@ -54,7 +67,7 @@
         </div>
         <nav class="flex gap-6 items-center animated-element slide-in-right">
             <a href="tel:+79539614167" class="px-4 py-2 rounded-lg border border-amber-300 text-sm font-medium hover:bg-amber-100/80 cta-button">Позвонить</a>
-            <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-amber-500 text-white text-sm font-medium shadow-md shadow-amber-500/30 hover:bg-amber-600 cta-button">Написать в WhatsApp</a>
+            <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-amber-600 text-white text-sm font-medium shadow-md shadow-amber-500/30 hover:bg-amber-700 cta-button">Написать в WhatsApp</a>
         </nav>
     </header>
     <main class="max-w-5xl mx-auto p-4 sm:p-6">
@@ -64,7 +77,7 @@
                     <h2 class="text-3xl lg:text-5xl font-extrabold mb-4 leading-tight tracking-tight animated-gradient-text">Собачье дело: каникулы для вашего друга</h2>
                     <p class="text-slate-600 leading-relaxed mb-8">Планируете отпуск, а тревожная мысль: "С кем оставить моего самого лучшего, самого любимого, самого хорошего мальчика/девочку?" — портит весь настрой? Хватит это терпеть! Отправьте своего хвостика не на передержку, а на настоящие собачьи каникулы.</p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-amber-500 text-white font-semibold shadow-lg shadow-amber-500/40 hover:bg-amber-600 cta-pulse cta-button shimmer-button">Забронировать в WhatsApp</a>
+                        <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-amber-600 text-white font-semibold shadow-lg shadow-amber-500/40 hover:bg-amber-700 cta-pulse cta-button shimmer-button">Забронировать в WhatsApp</a>
                         <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl border-2 border-amber-300 hover:bg-amber-100/80 cta-button font-semibold shimmer-button">Написать в Telegram</a>
                     </div>
                 </div>
@@ -72,13 +85,13 @@
                     <div class="photo-gallery overflow-hidden py-2 relative">
                         <div class="gallery-track flex gap-4">
                             <div class="photo-item shrink-0 w-4/5 sm:w-80 rounded-2xl overflow-hidden shadow-xl">
-                                <img src="https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png" alt="Счастливый пёс на траве" class="w-full h-96 object-cover" width="640" height="480" loading="eager" fetchpriority="high" decoding="async">
+                                <img src="https://i.postimg.cc/sxkfwpNh/Picsart-25-09-23-18-09-18-020.png" alt="Счастливый пёс на траве" class="w-full h-96 object-cover" width="273" height="384" loading="eager" fetchpriority="high">
                             </div>
                             <div class="photo-item shrink-0 w-4/5 sm:w-80 rounded-2xl overflow-hidden shadow-xl">
-                                <img src="https://i.postimg.cc/28z4Jkms/Picsart-25-09-28-22-09-02-273.png" alt="Светло-кремовая собака" class="w-full h-96 object-cover" width="320" height="240" loading="lazy" decoding="async">
+                                <img src="https://i.postimg.cc/28z4Jkms/Picsart-25-09-28-22-09-02-273.png" alt="Светло-кремовая собака" class="w-full h-96 object-cover" width="278" height="384" loading="lazy" decoding="async">
                             </div>
                             <div class="photo-item shrink-0 w-4/5 sm:w-80 rounded-2xl overflow-hidden shadow-xl">
-                                <img src="https://i.postimg.cc/1zxXkBwN/Picsart-25-09-25-20-32-27-572.jpg" alt="Немецкая овчарка" class="w-full h-96 object-cover" width="320" height="240" loading="lazy" decoding="async">
+                                <img src="https://i.postimg.cc/1zxXkBwN/Picsart-25-09-25-20-32-27-572.jpg" alt="Немецкая овчарка" class="w-full h-96 object-cover" width="273" height="384" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -389,4 +402,3 @@
 </script>
 </body>
 </html>
-
