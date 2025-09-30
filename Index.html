@@ -7,6 +7,7 @@
     <meta name="description" content="Профессиональная домашняя передержка для собак в Туле. Гарантируем уютные условия без клеток, регулярные прогулки, фото-отчеты и индивидуальный уход. Лучшая зоогостиница для вашего питомца на время отпуска.">
     <meta name="keywords" content="передержка собак тула, домашняя передержка собак в туле, оставить собаку в туле на время отпуска, гостиница для собак тула, зооняня тула, зоогостиница в туле, временный дом для собаки тула, уход за собакой во время отпуска тула, присмотр за собакой тула, няня для собаки тула, догситтер в туле, передержка щенков тула, оставить собаку на выходные в туле, забота о собаке в туле, индивидуальная передержка собак тула, собачья няня тула, отель для собак тула, пристроить собаку на время тула, гостиница для животных тула, догситтинг тула, временная передержка собак">
     <link rel="icon" href="https://i.postimg.cc/BQ8gc3xN/image.jpg">
+    <link rel="preload" as="image" href="https://i.postimg.cc/jdj1pByL/image.png" fetchpriority="high">
     <meta name="google-site-verification" content="S1ohOcvpbjkBpbA7gxz_Vna0tULOV-Z7-AVKYlp2cYw">
     <meta property="og:title" content="Собачье дело — Лучшая домашняя передержка в Туле">
     <meta property="og:description" content="Уютные каникулы для вашего питомца! Без клеток, с любовью и круглосуточной заботой.">
@@ -72,13 +73,13 @@
                     <div class="photo-gallery overflow-hidden py-2 relative">
                         <div class="gallery-track flex gap-4">
                             <div class="photo-item shrink-0 w-4/5 sm:w-80 rounded-2xl overflow-hidden shadow-xl">
-                                <img src="https://i.postimg.cc/jdj1pByL/image.png" alt="Хаски по кличке Стив, счастливая собака на траве" class="w-full h-96 object-cover" width="273" height="384" loading="eager" fetchpriority="high">
+                                <img src="https://i.postimg.cc/jdj1pByL/image.png" alt="Хаски по кличке Стив, счастливая собака на траве" class="w-full h-96 object-cover" width="568" height="800" loading="eager" fetchpriority="high" decoding="async">
                             </div>
                             <div class="photo-item shrink-0 w-4/5 sm:w-80 rounded-2xl overflow-hidden shadow-xl">
-                                <img src="https://i.postimg.cc/GtdWT2BP/image.png" alt="Светло-кремовая собака по кличке Лаки" class="w-full h-96 object-cover" width="278" height="384" loading="lazy" decoding="async">
+                                <img src="https://i.postimg.cc/GtdWT2BP/image.png" alt="Светло-кремовая собака по кличке Лаки" class="w-full h-96 object-cover" width="580" height="800" loading="lazy" decoding="async">
                             </div>
                             <div class="photo-item shrink-0 w-4/5 sm:w-80 rounded-2xl overflow-hidden shadow-xl">
-                                <img src="https://i.postimg.cc/BZc7LmZk/image.jpg" alt="Немецкая овчарка по кличке Граф" class="w-full h-96 object-cover" width="273" height="384" loading="lazy" decoding="async">
+                                <img src="https://i.postimg.cc/BZc7LmZk/image.jpg" alt="Немецкая овчарка по кличке Граф" class="w-full h-96 object-cover" width="568" height="800" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -167,33 +168,35 @@
         </footer>
     </main>
 <script>
-    window.onload = () => {
+    document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('loaded');
-    };
 
-    (() => {
         const animatedElements = document.querySelectorAll(".animated-element");
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("is-visible");
-                    const staggerContainer = entry.target.closest(".stagger-container");
-                    if (staggerContainer && !staggerContainer.dataset.staggered) {
-                        staggerContainer.dataset.staggered = "true";
-                        Array.from(staggerContainer.querySelectorAll(".animated-element, .animated-icon")).forEach((el, i) => {
-                            el.style.transitionDelay = `${i * 120}ms`;
-                            el.style.animationDelay = `${i * 120 + 200}ms`;
-                        });
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        const staggerContainer = entry.target.closest(".stagger-container");
+                        if (staggerContainer && !staggerContainer.dataset.staggered) {
+                            staggerContainer.dataset.staggered = "true";
+                            Array.from(staggerContainer.querySelectorAll(".animated-element, .animated-icon")).forEach((el, i) => {
+                                el.style.transitionDelay = `${i * 120}ms`;
+                                el.style.animationDelay = `${i * 120 + 200}ms`;
+                            });
+                        }
+                        if (!entry.target.closest(".stagger-container")) {
+                            observer.unobserve(entry.target);
+                        }
                     }
-                    if(!entry.target.closest(".stagger-container")) {
-                       observer.unobserve(entry.target);
-                    }
-                }
+                });
+            }, { threshold: 0.1 });
+            animatedElements.forEach((el) => {
+                observer.observe(el);
             });
-        }, { threshold: 0.1 });
-        animatedElements.forEach((el) => {
-            observer.observe(el);
-        });
+        } else {
+             animatedElements.forEach((el) => el.classList.add("is-visible"));
+        }
 
         let isScrolling = false;
         window.addEventListener("scroll", () => {
@@ -213,24 +216,26 @@
                 mapContainer.innerHTML = '<iframe title="Карта расположения Собачье дело в Туле" src="https://yandex.ru/map-widget/v1/?um=constructor%3Afe7891560a9668271fd0d27abd5b65674991c50f508218fd566e5c0ad8f17c9f&source=constructor" width="100%" height="450" style="border:0" loading="lazy"></iframe>';
             }
         };
-
-        if (window.innerWidth < 768) {
-            if(mapContainer) {
-                new IntersectionObserver((entries, obs) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            loadMap();
-                            obs.unobserve(entry.target);
+        
+        if(mapContainer && "IntersectionObserver" in window) {
+            new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (window.innerWidth >= 768) {
+                             mapFacade.addEventListener("click", loadMap, { once: true });
+                        } else {
+                             loadMap();
                         }
-                    });
-                }, { threshold: 0.1 }).observe(mapContainer);
-            }
-        } else {
-            if(mapFacade) mapFacade.addEventListener("click", loadMap, { once: true });
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "200px" }).observe(mapContainer);
+        } else if(mapFacade) {
+            loadMap();
         }
 
         const priceCounter = document.getElementById("price-counter");
-        if (priceCounter) {
+        if (priceCounter && "IntersectionObserver" in window) {
             new IntersectionObserver((entries, obs) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -260,7 +265,7 @@
                 });
             }, { threshold: 0.8 }).observe(priceCounter);
         }
-        
+
         const gallery = document.querySelector('.photo-gallery');
         if (gallery) {
             const track = gallery.querySelector('.gallery-track');
@@ -310,54 +315,8 @@
             const factTextElement = document.getElementById('dog-fact-text');
             const newFactButton = document.getElementById('new-fact-button');
 
-            const allFacts = [
-                "Собаки по природе подчиняются любому существу с более высоким статусом стаи, человеку или собаке.",
-                "Чем длиннее собачий нос, тем эффективнее его внутренняя система охлаждения.",
-                "Порода Чихуахуа была названа в честь штата в Мексике, где она были обнаружена.",
-                "Басенджи - единственная в мире собака без лая.",
-                "Собаки иногда улыбаются - так же, как и люди - с открытым ртом. Это может указывать на расслабленное, покорное состояние.",
-                "Бордер-колли часто считаются самой умной породой собак, некоторые из них распознают слова для 1000 предметов.",
-                "Усы собаки используются для навигации и обнаружения объектов в темноте.",
-                "Ньюфаундлендская порода имеет водостойкую шерсть и перепончатые лапы, что делает их отличными пловцами.",
-                "Собак можно обучить выявлять рак и другие заболевания у людей по запаху.",
-                "Рин Тин Тин был первой голливудской собачьей звездой и подписывал контракты отпечатком лапы.",
-                "У взрослой собаки 42 зуба.",
-                "Александр Великий основал и назвал город Перитас в память о своей любимой собаке.",
-                "Три собаки выжили после гибели «Титаника»: ньюфаундлендская, померанская и пекинесская.",
-                "Бигль и колли считаются самыми любопытными породами собак.",
-                "Собаки упоминаются в Библии более 35 раз.",
-                "Лабрадор-ретривер - самая популярная порода в США, Канаде и Великобритании уже много лет.",
-                "Самая умная порода собак - бордер-колли.",
-                "Собаки обычно имеют от одного до шестнадцати или даже больше щенков в одном помете.",
-                "У большинства собак есть 18 или более мышц, которые позволяют им двигать ушами.",
-                "Сука - литературное слово, обозначающее самку собаки.",
-                "Средняя городская собака живет на 3 года дольше, чем деревенская.",
-                "Большинство собак способны понимать до 250 слов и жестов.",
-                "Бордер-колли по имени Чейзер выучил названия 1022 игрушек и мог приносить каждую по команде.",
-                "Собаки могут видеть в цвете, но их зрение похоже на зрение человека с красно-зеленым дальтонизмом.",
-                "Отпечаток носа собаки уникален, как отпечаток пальца человека.",
-                "Собаки потеют в основном через подушечки своих лап.",
-                "Щенки рождаются глухими, слепыми и беззубыми.",
-                "Сердце крупной собаки бьется медленнее (60-100 ударов в минуту), чем у маленькой (100-140 ударов).",
-                "Порода Салюки — одна из древнейших, изображения похожих собак находят в египетских гробницах.",
-                "Собаки сворачиваются калачиком во сне, чтобы защитить свои жизненно важные органы — это древний инстинкт.",
-                "Собачий слух примерно в четыре раза чувствительнее человеческого.",
-                "Шоколад ядовит для собак из-за вещества теобромин, который они не могут переваривать.",
-                "Собаки могут испытывать ревность, когда их хозяева проявляют внимание к другим.",
-                "Собака Лайка стала первым живым существом, выведенным на орбиту Земли.",
-                "Собаки могут определять время. Они знают, когда хозяин должен вернуться домой.",
-                "Самая высокая собака в истории, немецкий дог по кличке Зевс, имела рост 111 см в холке.",
-                "Далматинцы рождаются полностью белыми, а их знаменитые пятна появляются по мере взросления.",
-                "Собаки зевают не только от усталости, но и чтобы выразить стресс или успокоиться.",
-                "Обоняние собаки в 10,000 - 100,000 раз сильнее человеческого.",
-                "Собаки машут хвостом вправо, когда счастливы, и влево, когда напуганы или встревожены.",
-                "Порода Лундехунд имеет шесть пальцев на каждой лапе и может закрывать свои уши для защиты от воды.",
-                "Средняя собака может бежать со скоростью около 30 км/ч.",
-                "Грейхаунды — самые быстрые собаки, способные развивать скорость до 72 км/ч на коротких дистанциях."
-            ];
-
+            const allFacts = ["Собаки по природе подчиняются любому существу с более высоким статусом стаи, человеку или собаке.","Чем длиннее собачий нос, тем эффективнее его внутренняя система охлаждения.","Порода Чихуахуа была названа в честь штата в Мексике, где она были обнаружена.","Басенджи - единственная в мире собака без лая.","Собаки иногда улыбаются - так же, как и люди - с открытым ртом. Это может указывать на расслабленное, покорное состояние.","Бордер-колли часто считаются самой умной породой собак, некоторые из них распознают слова для 1000 предметов.","Усы собаки используются для навигации и обнаружения объектов в темноте.","Ньюфаундлендская порода имеет водостойкую шерсть и перепончатые лапы, что делает их отличными пловцами.","Собак можно обучить выявлять рак и другие заболевания у людей по запаху.","Рин Тин Тин был первой голливудской собачьей звездой и подписывал контракты отпечатком лапы.","У взрослой собаки 42 зуба.","Александр Великий основал и назвал город Перитас в память о своей любимой собаке.","Три собаки выжили после гибели «Титаника»: ньюфаундлендская, померанская и пекинесская.","Бигль и колли считаются самыми любопытными породами собак.","Собаки упоминаются в Библии более 35 раз.","Лабрадор-ретривер - самая популярная порода в США, Канаде и Великобритании уже много лет.","Самая умная порода собак - бордер-колли.","Собаки обычно имеют от одного до шестнадцати или даже больше щенков в одном помете.","У большинства собак есть 18 или более мышц, которые позволяют им двигать ушами.","Сука - литературное слово, обозначающее самку собаки.","Средняя городская собака живет на 3 года дольше, чем деревенская.","Большинство собак способны понимать до 250 слов и жестов.","Бордер-колли по имени Чейзер выучил названия 1022 игрушек и мог приносить каждую по команде.","Собаки могут видеть в цвете, но их зрение похоже на зрение человека с красно-зеленым дальтонизмом.","Отпечаток носа собаки уникален, как отпечаток пальца человека.","Собаки потеют в основном через подушечки своих лап.","Щенки рождаются глухими, слепыми и беззубыми.","Сердце крупной собаки бьется медленнее (60-100 ударов в минуту), чем у маленькой (100-140 ударов).","Порода Салюки — одна из древнейших, изображения похожих собак находят в египетских гробницах.","Собаки сворачиваются калачиком во сне, чтобы защитить свои жизненно важные органы — это древний инстинкт.","Собачий слух примерно в четыре раза чувствительнее человеческого.","Шоколад ядовит для собак из-за вещества теобромин, который они не могут переваривать.","Собаки могут испытывать ревность, когда их хозяева проявляют внимание к другим.","Собака Лайка стала первым живым существом, выведенным на орбиту Земли.","Собаки могут определять время. Они знают, когда хозяин должен вернуться домой.","Самая высокая собака в истории, немецкий дог по кличке Зевс, имела рост 111 см в холке.","Далматинцы рождаются полностью белыми, а их знаменитые пятна появляются по мере взросления.","Собаки зевают не только от усталости, но и чтобы выразить стресс или успокоиться.","Обоняние собаки в 10,000 - 100,000 раз сильнее человеческого.","Собаки машут хвостом вправо, когда счастливы, и влево, когда напуганы или встревожены.","Порода Лундехунд имеет шесть пальцев на каждой лапе и может закрывать свои уши для защиты от воды.","Средняя собака может бежать со скоростью около 30 км/ч.","Грейхаунды — самые быстрые собаки, способные развивать скорость до 72 км/ч на коротких дистанциях."];
             let factDeck = [];
-
             const shuffleDeck = () => {
                 factDeck = [...allFacts];
                 for (let i = factDeck.length - 1; i > 0; i--) {
@@ -365,7 +324,6 @@
                     [factDeck[i], factDeck[j]] = [factDeck[j], factDeck[i]];
                 }
             };
-
             const getNewFact = () => {
                 if (factDeck.length === 0) {
                     shuffleDeck();
@@ -384,9 +342,7 @@
         };
 
         initLocalFacts();
-
-    })();
+    });
 </script>
 </body>
 </html>
-
