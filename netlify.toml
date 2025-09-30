@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://hvost.netlify.app/*"
+  to = "https://sobakaonline.ru/:splat"
+  status = 301
+  force = true
