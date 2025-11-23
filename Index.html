@@ -15,9 +15,6 @@
     <meta property="og:url" content="https://sobakaonline.ru">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Собачье дело">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://i.postimg.cc" crossorigin>
     <link rel="dns-prefetch" href="https://yandex.ru">
     <script type="application/ld+json">
@@ -38,476 +35,341 @@
       "openingHours": "Mo-Su 00:00-23:59"
     }
     </script>
-    <style>
-        *,::after,::before{box-sizing:border-box;border:0 solid}html{line-height:1.5;-webkit-text-size-adjust:100%;tab-size:4;font-family:'Nunito',ui-sans-serif,system-ui,sans-serif;scroll-behavior:smooth}body{margin:0;line-height:inherit;background-color:#fffcf5;color:#1e293b;overflow-x:hidden}h1,h2,h3,h4,h5,h6{font-family:'Rubik',sans-serif;margin:0}p{margin:0}ul{list-style:none;margin:0;padding:0}a{color:inherit;text-decoration:inherit;cursor:pointer}img,svg{display:block;vertical-align:middle}img{max-width:100%;height:auto}details,summary{display:block}summary{cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}
-        .container{width:100%}@media (min-width:640px){.container{max-width:640px}}@media (min-width:768px){.container{max-width:768px}}@media (min-width:1024px){.container{max-width:1024px}}@media (min-width:1280px){.container{max-width:1280px}}
-        .mx-auto{margin-left:auto;margin-right:auto}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-4{margin-right:1rem}.mt-8{margin-top:2rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.pb-6{padding-bottom:1.5rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}
-        .flex-col{flex-direction:column}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}
-        .w-full{width:100%}.w-12{width:3rem}.h-12{height:3rem}.h-96{height:24rem}.max-w-6xl{max-width:72rem}.max-w-5xl{max-width:64rem}.shrink-0{flex-shrink:0}.flex-1{flex:1 1 0%}
-        .rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-lg{border-radius:.5rem}.rounded-xl{border-radius:.75rem}.rounded-full{border-radius:9999px}
-        .border{border-width:1px}.border-2{border-width:2px}.border-amber-300{border-color:#fcd34d}.border-amber-400{border-color:#fbbf24}.border-slate-200{border-color:#e2e8f0}
-        .bg-white\/70{background-color:rgba(255,255,255,0.7)}.bg-white\/80{background-color:rgba(255,255,255,0.8)}.bg-amber-100{background-color:#fef3c7}.bg-amber-700{background-color:#b45309}.bg-amber-50\/50{background-color:rgba(255,251,235,0.5)}
-        .text-white{color:#fff}.text-amber-500{color:#f59e0b}.text-amber-600{color:#d97706}.text-amber-800{color:#92400e}.text-slate-500{color:#64748b}.text-slate-600{color:#475569}.text-slate-700{color:#334155}.text-slate-800{color:#1e293b}
-        .font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-semibold{font-weight:600}.font-medium{font-weight:500}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.text-xl{font-size:1.25rem}.text-2xl{font-size:1.5rem}.text-3xl{font-size:1.875rem}
-        .shadow-lg{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -4px rgba(0,0,0,0.1)}.shadow-xl{box-shadow:0 20px 25px -5px rgba(0,0,0,0.1),0 8px 10px -6px rgba(0,0,0,0.1)}.shadow-md{box-shadow:0 4px 6px -1px rgba(0,0,0,0.1)}
-        .backdrop-blur-sm{backdrop-filter:blur(4px)}.backdrop-blur-md{backdrop-filter:blur(12px)}
-        .object-cover{object-fit:cover}
-        .transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4,0,0.2,1);transition-duration:300ms}
-        
-        /* Custom Animations & Effects */
-        body {
-            background-image: radial-gradient(at 0% 0%, hsla(37,90%,96%,1) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(45,90%,96%,1) 0, transparent 50%);
-            background-attachment: fixed;
-        }
-        .blob-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-            pointer-events: none;
-        }
-        .blob {
-            position: absolute;
-            filter: blur(80px);
-            opacity: 0.6;
-            animation: float-blob 20s infinite ease-in-out alternate;
-        }
-        .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #fde68a; animation-delay: 0s; }
-        .blob-2 { bottom: -10%; right: -10%; width: 40vw; height: 40vw; background: #fecaca; animation-delay: -5s; }
-        .blob-3 { top: 40%; left: 30%; width: 30vw; height: 30vw; background: #bae6fd; animation-delay: -10s; opacity: 0.4; }
-        
-        @keyframes float-blob {
-            0% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, 50px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-            100% { transform: translate(0, 0) scale(1); }
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-        }
-        
-        .animated-gradient-text {
-            background: linear-gradient(300deg, #b45309, #f59e0b, #d97706, #fbbf24);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 5s linear infinite;
-        }
-        @keyframes shine { to { background-position: 200% center; } }
-
-        .cta-button {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        .cta-button::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transform: skewX(-20deg);
-            transition: 0.5s;
-        }
-        .cta-button:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 15px 25px -5px rgba(245, 158, 11, 0.4); }
-        .cta-button:hover::after { left: 150%; transition: 0.7s ease-in-out; }
-        .cta-button:active { transform: scale(0.95); }
-
-        .animated-element { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
-        .animated-element.is-visible { opacity: 1; transform: translateY(0); }
-        
-        .stagger-delay-1 { transition-delay: 100ms; }
-        .stagger-delay-2 { transition-delay: 200ms; }
-        .stagger-delay-3 { transition-delay: 300ms; }
-
-        .service-card { transition: all 0.4s ease; }
-        .service-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.9); box-shadow: 0 20px 40px -5px rgba(0,0,0,0.1); border-color: #fcd34d; }
-        
-        .floating-icon { display: inline-block; animation: float-icon 4s ease-in-out infinite; }
-        @keyframes float-icon { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-
-        /* Gallery Marquee */
-        .photo-gallery { mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
-        .gallery-track { display: flex; gap: 1.5rem; width: max-content; animation: scroll-left 40s linear infinite; }
-        .gallery-track:hover { animation-play-state: paused; }
-        @keyframes scroll-left { to { transform: translateX(-50%); } }
-        
-        .photo-item { 
-            position: relative; 
-            border-radius: 1rem; 
-            overflow: hidden; 
-            transform: perspective(1000px) rotateY(0deg); 
-            transition: transform 0.5s ease, box-shadow 0.5s ease; 
-        }
-        .photo-item:hover { transform: scale(1.05) rotateY(5deg); box-shadow: 0 15px 30px rgba(245, 158, 11, 0.3); z-index: 10; }
-        
-        /* Preloader */
-        #preloader { position: fixed; inset: 0; background: #fffcf5; z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 0.5s ease, visibility 0.5s; }
-        .paw-print { width: 60px; height: 60px; fill: #f59e0b; animation: paw-pulse 1s infinite alternate; }
-        @keyframes paw-pulse { from { transform: scale(1); opacity: 0.6; } to { transform: scale(1.2); opacity: 1; } }
-        
-        details summary::-webkit-details-marker { display: none; }
-        details[open] summary ~ * { animation: sweep .5s ease-in-out; }
-        @keyframes sweep { 0% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 1; transform: translateY(0); } }
-        .arrow-icon { transition: transform 0.3s ease; }
-        details[open] .arrow-icon { transform: rotate(180deg); }
-
-        .parallax-item { transition: transform 0.1s linear; will-change: transform; }
-
-        @media (min-width: 640px){.sm\:w-auto{width:auto}.sm\:flex-row{flex-direction:row}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:py-4{padding-top:1rem;padding-bottom:1rem}.sm\:p-8{padding:2rem}}
-        @media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:items-center{align-items:center}.md\:gap-8{gap:2rem}.md\:flex-row{flex-direction:row}}
-        @media (min-width: 1024px){.lg\:text-5xl{font-size:3rem;line-height:1}}
-        
-        .hover-underline-animation { position: relative; }
-        .hover-underline-animation::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 2px; bottom: -2px; left: 0; background-color: #f59e0b; transform-origin: bottom right; transition: transform 0.25s ease-out; }
-        .hover-underline-animation:hover::after { transform: scaleX(1); transform-origin: bottom left; }
-    </style>
+    <style>*,::after,::before{box-sizing:border-box;border:0 solid}::after,::before{--tw-content:""}html{line-height:1.5;-webkit-text-size-adjust:100%;tab-size:4;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;font-feature-settings:normal;font-variation-settings:normal}html,body{width:100%;overflow-x:hidden;position:relative}body{margin:0;line-height:inherit}h1,h2,h3,p{margin:0}ul{list-style:none;margin:0;padding:0}a{color:inherit;text-decoration:inherit}img,svg{display:block;vertical-align:middle}img{max-width:100%;height:auto}details,summary{display:block}summary{cursor:pointer}summary::-webkit-details-marker{display:none}*,::after,::before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scroll-snap-strictness:proximity;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000}.container{width:100%}@media (min-width:640px){.container{max-width:640px}}@media (min-width:768px){.container{max-width:768px}}@media (min-width:1024px){.container{max-width:1024px}}@media (min-width:1280px){.container{max-width:1280px}}@media (min-width:1536px){.container{max-width:1536px}}.mx-auto{margin-left:auto;margin-right:auto}.mb-2{margin-bottom:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-4{margin-right:1rem}.mt-8{margin-top:2rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-12{height:3rem}.h-96{height:24rem}.w-12{width:3rem}.w-full{width:100%}.w-auto{width:auto}.max-w-2xl{max-width:42rem}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.shrink-0{flex-shrink:0}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.snap-center{scroll-snap-align:center}.snap-x{scroll-snap-type:x mandatory}.cursor-pointer{cursor:pointer}.list-none{list-style-type:none}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-3>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.75rem * var(--tw-space-y-reverse))}.space-y-4>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.rounded-2xl{border-radius:1rem}.rounded-lg{border-radius:.5rem}.rounded-md{border-radius:.375rem}.rounded-xl{border-radius:.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138 / var(--tw-border-opacity))}.border-amber-300{--tw-border-opacity:1;border-color:rgb(252 211 77 / var(--tw-border-opacity))}.border-amber-400{--tw-border-opacity:1;border-color:rgb(251 191 36 / var(--tw-border-opacity))}.border-slate-200\/50{border-color:rgb(226 232 240 / 0.5)}.border-slate-200\/80{border-color:rgb(226 232 240 / 0.8)}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199 / var(--tw-bg-opacity))}.bg-amber-50\/50{background-color:rgb(255 251 235 / 0.5)}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity))}.bg-amber-600{--tw-bg-opacity:1;background-color:rgb(217 119 6 / var(--tw-bg-opacity))}.bg-white\/70{background-color:rgb(255 255 255 / 0.7)}.object-cover{object-fit:cover}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.pb-6{padding-bottom:1.5rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-.025em}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity))}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14 / var(--tw-text-opacity))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1),0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color),0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1),0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color),0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color),0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.shadow-amber-500\/30{--tw-shadow-color:rgb(245 158 11 / 0.3);--tw-shadow:var(--tw-shadow-colored)}.shadow-amber-500\/40{--tw-shadow-color:rgb(245 158 11 / 0.4);--tw-shadow:var(--tw-shadow-colored)}.shadow-amber-600\/30{--tw-shadow-color:rgb(217 119 6 / 0.3);--tw-shadow:var(--tw-shadow-colored)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;background:linear-gradient(-45deg,#FFFCF5,#FFF9E6,#FEF3C7,#FFFCF5);background-size:400% 400%;animation:gradient-flow 30s ease infinite;--scroll-y:0}body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='rgba(251, 191, 36, 0.08)' transform='rotate(20 50 50)'%3E%3Cellipse cx='50' cy='65' rx='18' ry='14'/%3E%3Ccircle cx='28' cy='38' r='8'/%3E%3Ccircle cx='50' cy='30' r='8'/%3E%3Ccircle cx='72' cy='38' r='8'/%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat;background-size:200px 200px;z-index:-1;will-change:transform;background-position-y:var(--scroll-y)}@keyframes gradient-flow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}#preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:#FFFCF5;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity .5s ease-out,visibility .5s ease-out;visibility:visible;opacity:1}.spinner{width:50px;height:50px;border:5px solid rgba(245,158,11,0.2);border-top-color:#f59e0b;border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}body.loaded #preloader{opacity:0;visibility:hidden}body:not(.loaded){overflow:hidden}.animated-element{opacity:0;transition:opacity .8s cubic-bezier(0.16,1,0.3,1),transform .8s cubic-bezier(0.16,1,0.3,1);will-change:opacity,transform}.slide-up{transform:translateY(40px)}.slide-in-left{transform:translateX(-40px)}.slide-in-right{transform:translateX(40px)}.scale-in{transform:scale(0.9)}.is-visible{opacity:1;transform:translate(0,0) scale(1)}@keyframes pulse-glow{0%,100%{box-shadow:0 0 10px 0 rgba(251,191,36,0.3)}50%{box-shadow:0 0 20px 6px rgba(251,191,36,0.5)}}.cta-pulse{animation:pulse-glow 3s infinite ease-in-out}details>p{max-height:0;overflow:hidden;transition:max-height .6s cubic-bezier(0.2,0,0,1),padding .6s ease,margin .6s ease;padding:0 .75rem;margin:0}details[open]>p{max-height:200px;margin-top:.5rem;padding:.75rem}@keyframes tail-wag{0%{transform:rotate(-10deg) scale(1.05)}100%{transform:rotate(10deg) scale(1.05)}}.logo-icon:hover{animation:tail-wag .4s ease-in-out infinite alternate}.cta-button{transition:transform .2s cubic-bezier(0.2,0,0,1),box-shadow .2s ease,filter .2s ease}.cta-button:hover{transform:translateY(-2px) scale(1.05);filter:brightness(1.05)}.cta-button:active{transform:scale(0.95) translateY(1px);filter:brightness(0.9)}@keyframes icon-pop{0%{transform:scale(0.5);opacity:0}70%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}.animated-icon{display:inline-block;animation-fill-mode:forwards;opacity:0;transform-origin:center center}.is-visible .animated-icon{animation-name:icon-pop;animation-duration:.6s;animation-timing-function:cubic-bezier(0.25,0.46,0.45,0.94);animation-delay:inherit}.map-facade{position:relative;min-height:450px;background:#e5e7eb;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.125rem;font-weight:600;color:#475569}.map-facade::after{content:'Нажмите, чтобы загрузить карту';position:absolute;padding:1rem 1.5rem;background:rgba(255,255,255,0.95);border-radius:.75rem;box-shadow:0 4px 6px rgba(0,0,0,0.1)}.animated-gradient-text{background:linear-gradient(-45deg,#d97706,#f59e0b,#92400e,#f59e0b);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:text-flow 10s ease-in-out infinite alternate}@keyframes text-flow{to{background-position:200% center}}@keyframes subtle-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}.floating-icon{animation:subtle-float 3s ease-in-out infinite}.shimmer-button{position:relative;overflow:hidden}.shimmer-button::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,0.3) 50%,rgba(255,255,255,0) 100%);transform:translateX(-100%);transition:transform .8s cubic-bezier(.2,0,0,1)}.shimmer-button:hover::after{transform:translateX(100%)}.faq-summary{position:relative}.faq-summary::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background-color:#f59e0b;transition:width .4s ease-in-out}.faq-summary:hover::after{width:100%}.photo-gallery::-webkit-scrollbar{display:none}.photo-gallery{-ms-overflow-style:none;scrollbar-width:none}.hover\:bg-amber-100\/80:hover{background-color:rgb(254 243 199 / 0.8)}.hover\:bg-amber-200:hover{--tw-bg-opacity:1;background-color:rgb(253 230 138 / var(--tw-bg-opacity))}.hover\:border-amber-300:hover{--tw-border-opacity:1;border-color:rgb(252 211 77 / var(--tw-border-opacity))}.hover\:bg-amber-700:hover{--tw-bg-opacity:1;background-color:rgb(180 83 9 / var(--tw-bg-opacity))}.hover\:text-amber-600:hover{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity))}.hover\:-translate-y-2:hover{--tw-translate-y:-0.5rem;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1),0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color),0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow)}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group[open] .group-open\:rotate-180{--tw-rotate:180deg;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}
+.photo-gallery{-webkit-mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent);mask-image:linear-gradient(to right,transparent,black 10%,black 90%,transparent)}.gallery-track{display:flex;width:fit-content;will-change:transform}.scrolling .gallery-track{animation:scroll var(--scroll-duration,20s) linear infinite}@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(var(--scroll-distance))}}.photo-item{position:relative;overflow:hidden;transition:box-shadow .3s ease-in-out, transform .3s ease-in-out}.photo-item::after{content:'';position:absolute;top:-50%;left:-75%;width:50%;height:200%;background:linear-gradient(to right,rgba(255,255,255,0) 0%,rgba(255,255,255,.4) 50%,rgba(255,255,255,0) 100%);transform:skewX(-25deg);transition:transform .8s cubic-bezier(.2,0,0,1);transform-origin:center}.photo-item:hover{box-shadow:0 0 8px 2px rgba(251,191,36,.6),0 0 16px 4px rgba(251,191,36,.4); transform: scale(1.03);}.photo-item:hover::after{transform:translateX(300%) skewX(-25deg)}@media(hover:hover){.scrolling:hover .gallery-track{animation-play-state:paused}}
+#dog-facts-section{min-height:220px;display:flex;flex-direction:column;justify-content:center;position:relative}#dog-fact-text{min-height:80px;transition:opacity .3s ease-in-out}
+@keyframes fade-in-up{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}.fade-in-up{animation:fade-in-up .6s ease-out forwards}
+.bg-amber-700{--tw-bg-opacity:1;background-color:rgb(180 83 9 / var(--tw-bg-opacity))}
+.hover\:bg-amber-800:hover{--tw-bg-opacity:1;background-color:rgb(146 64 14 / var(--tw-bg-opacity))}
+@media (min-width: 640px){.sm\:w-auto{width:auto}.sm\:w-1\/3{width:33.333333%}.sm\:flex-row{flex-direction:row}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:py-4{padding-top:1rem;padding-bottom:1rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:p-8{padding:2rem}}@media (min-width: 768px){.md\:grid{display:grid}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.md\:items-center{align-items:center}.md\:gap-8{gap:2rem}.md\:flex-row{flex-direction:row}}@media (min-width: 1024px){.lg\:text-5xl{font-size:3rem;line-height:1}}</style>
 </head>
 <body class="text-slate-800">
-    <!-- Animated Background Blobs -->
-    <div class="blob-bg">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
-
-    <!-- Preloader -->
     <div id="preloader">
-        <svg class="paw-print" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 224c-79.41 0-144 64.59-144 144s64.59 144 144 144 144-64.59 144-144-64.59-144-144-144zm0 240c-52.94 0-96-43.06-96-96s43.06-96 96-96 96 43.06 96 96-43.06 96-96 96zm-166.8-150.3c15.02 18.02 42.12 20.37 60.14 5.35 18.02-15.02 20.37-42.12 5.35-60.14-15.02-18.02-42.12-20.37-60.14-5.35-18.02 15.02-20.37 42.12-5.35 60.14zm322.3-60.14c-15.02-18.02-42.12-20.37-60.14-5.35-18.02 15.02-20.37 42.12-5.35 60.14 15.02 18.02 42.12 20.37 60.14 5.35 18.02-15.02 20.37-42.12 5.35-60.14zM106.5 137.6c-22.09-8.84-47.53 1.94-56.37 24.03-8.84 22.09 1.94 47.53 24.03 56.37 22.09 8.84 47.53-1.94 56.37-24.03 8.84-22.09-1.94-47.53-24.03-56.37zM405.5 137.6c-22.09 8.84-32.87 34.28-24.03 56.37 8.84 22.09 34.28 32.87 56.37 24.03 22.09-8.84 32.87-34.28 24.03-56.37-8.84-22.09-34.28-32.87-56.37-24.03z"/></svg>
+        <div class="spinner"></div>
     </div>
-
-    <header class="fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/70 border-b border-white/50" id="main-header">
-        <div class="max-w-6xl mx-auto p-4 sm:px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-4 group cursor-pointer">
-                <img src="https://i.postimg.cc/BQ8gc3xN/image.jpg" alt="Логотип Собачье дело" class="w-12 h-12 rounded-2xl shadow-md transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110" decoding="async" loading="eager" width="48" height="48">
-                <div>
-                    <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight animated-gradient-text">Собачье дело</h1>
-                    <p class="text-sm text-slate-600 font-medium group-hover:text-amber-600 transition-colors">Профессиональный уход и забота в Туле.</p>
-                </div>
+    <header class="max-w-6xl mx-auto p-4 sm:px-6 sm:py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4 animated-element slide-in-left">
+            <img src="https://i.postimg.cc/BQ8gc3xN/image.jpg" alt="Логотип Собачье дело" class="w-12 h-12 rounded-2xl logo-icon transition-transform duration-200 flex-shrink-0" decoding="async" loading="eager" width="48" height="48">
+            <div>
+                <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight animated-gradient-text">Собачье дело</h1>
+                <p class="text-sm text-slate-600">Профессиональный уход и забота в Туле.</p>
             </div>
-            <nav class="flex gap-4 items-center">
-                <a href="tel:+79539614167" class="px-5 py-2.5 rounded-xl border-2 border-amber-300 text-amber-800 text-sm font-bold hover:bg-amber-100 hover:border-amber-400 cta-button">Позвонить</a>
-                <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-5 py-2.5 rounded-xl bg-green-600 text-white text-sm font-bold shadow-lg shadow-green-500/30 hover:bg-green-700 cta-button" style="background-color: #25D366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);">WhatsApp</a>
-            </nav>
         </div>
+        <nav class="flex gap-6 items-center animated-element slide-in-right">
+            <a href="tel:+79539614167" class="px-4 py-2 rounded-lg border border-amber-300 text-sm font-medium hover:bg-amber-100/80 cta-button">Позвонить</a>
+            <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-4 py-2 rounded-lg bg-amber-700 text-white text-sm font-medium shadow-md shadow-amber-500/30 hover:bg-amber-800 cta-button">Написать в WhatsApp</a>
+        </nav>
     </header>
-
-    <main class="max-w-6xl mx-auto p-4 sm:p-6 mt-28">
-        <!-- Hero Section -->
-        <section class="glass-card rounded-3xl p-6 sm:p-10 mb-12 animated-element relative overflow-hidden">
-            <div class="absolute -top-10 -right-10 w-40 h-40 bg-amber-200 rounded-full blur-3xl opacity-50 parallax-item" data-speed="0.05"></div>
-            
-            <div class="flex flex-col md:flex-row md:items-center md:gap-12 relative z-10">
-                <div class="flex-1 animated-element stagger-delay-1">
-                    <h2 class="text-3xl lg:text-5xl font-extrabold mb-6 leading-tight tracking-tight">
-                        <span class="animated-gradient-text">Собачье дело:</span><br> 
-                        каникулы для вашего друга
-                    </h2>
-                    <p class="text-slate-600 text-lg leading-relaxed mb-8 border-l-4 border-amber-300 pl-4 bg-white/50 rounded-r-lg p-2">
-                        Планируете отпуск, а тревожная мысль: "С кем оставить моего самого лучшего, самого любимого, самого хорошего мальчика/девочку?" — портит весь настрой? Хватит это терпеть! Отправьте своего хвостика не на передержку, а на настоящие собачьи каникулы.
-                    </p>
+    <main class="max-w-5xl mx-auto p-4 sm:p-6">
+        <section class="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 sm:p-8 mb-8 animated-element scale-in transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <div class="flex flex-col md:flex-row md:items-center md:gap-8">
+                <div class="flex-1 animated-element slide-in-left" style="transition-delay:200ms;">
+                    <h2 class="text-3xl lg:text-5xl font-extrabold mb-4 leading-tight tracking-tight animated-gradient-text">Собачье дело: каникулы для вашего друга</h2>
+                    <p class="text-slate-600 leading-relaxed mb-8">Планируете отпуск, а тревожная мысль: "С кем оставить моего самого лучшего, самого любимого, самого хорошего мальчика/девочку?" — портит весь настрой? Хватит это терпеть! Отправьте своего хвостика не на передержку, а на настоящие собачьи каникулы.</p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="flex-1 sm:w-auto text-center px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-700 text-white font-bold text-lg shadow-xl shadow-amber-500/40 hover:shadow-amber-600/50 cta-button">
-                            Забронировать в WhatsApp
-                        </a>
-                        <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="flex-1 sm:w-auto text-center px-8 py-4 rounded-2xl bg-white border-2 border-amber-400 text-amber-800 font-bold text-lg hover:bg-amber-50 cta-button">
-                            Написать в Telegram
-                        </a>
+                        <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-amber-700 text-white font-semibold shadow-lg shadow-amber-500/40 hover:bg-amber-800 cta-pulse cta-button shimmer-button">Забронировать в WhatsApp</a>
+                        <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl border-2 border-amber-300 hover:bg-amber-100/80 cta-button font-semibold shimmer-button">Написать в Telegram</a>
                     </div>
                 </div>
-                
-                <div class="flex-1 mt-10 md:mt-0 animated-element stagger-delay-2">
-                    <div class="photo-gallery overflow-hidden py-4 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/60 shadow-inner">
-                        <div class="gallery-track flex items-center">
-                            <!-- Images will be cloned by JS, initial set: -->
-                            <div class="photo-item shrink-0 w-64 h-80 rounded-2xl overflow-hidden shadow-lg border-4 border-white">
-                                <img src="https://i.postimg.cc/YqPNDPpZ/image.webp" alt="Хаски" class="w-full h-full object-cover">
+                <div class="flex-1 mt-8 animated-element slide-in-right" style="transition-delay:300ms;">
+                    <div class="photo-gallery overflow-hidden py-2 relative">
+                        <div class="gallery-track flex gap-4">
+                            <div class="photo-item shrink-0 w-4/5 sm:w-80 rounded-2xl overflow-hidden shadow-xl">
+                                <img src="https://i.postimg.cc/YqPNDPpZ/image.webp" 
+                                     alt="Хаски по кличке Стив, счастливая собака на траве" 
+                                     class="w-full h-96 object-cover" 
+                                     style="aspect-ratio: 568 / 800;"
+                                     width="568" height="800" 
+                                     loading="eager" fetchpriority="high">
                             </div>
-                            <div class="photo-item shrink-0 w-64 h-80 rounded-2xl overflow-hidden shadow-lg border-4 border-white">
-                                <img src="https://i.postimg.cc/s2rhtdbY/image.webp" alt="Собака Лаки" class="w-full h-full object-cover">
+                            <div class="photo-item shrink-0 w-4/5 sm:w-80 rounded-2xl overflow-hidden shadow-xl">
+                                <img src="https://i.postimg.cc/s2rhtdbY/image.webp" 
+                                     alt="Светло-кремовая собака по кличке Лаки" 
+                                     class="w-full h-96 object-cover" 
+                                     width="580" height="800" 
+                                     loading="lazy" decoding="async">
                             </div>
-                            <div class="photo-item shrink-0 w-64 h-80 rounded-2xl overflow-hidden shadow-lg border-4 border-white">
-                                <img src="https://i.postimg.cc/rFfZVgqK/image.webp" alt="Овчарка Граф" class="w-full h-full object-cover">
+                            <div class="photo-item shrink-0 w-4/5 sm:w-80 rounded-2xl overflow-hidden shadow-xl">
+                                <img src="https://i.postimg.cc/rFfZVgqK/image.webp" 
+                                     alt="Немецкая овчарка по кличке Граф" 
+                                     class="w-full h-96 object-cover" 
+                                     width="568" height="800" 
+                                     loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Services -->
-        <section id="services" class="grid md:grid-cols-3 gap-6 mb-12">
-            <article class="service-card glass-card p-8 rounded-3xl animated-element stagger-delay-1 flex flex-col items-start">
-                <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm floating-icon">🛋️</div>
-                <h3 class="font-bold mb-3 text-xl text-slate-800">Лежание на диване со смыслом</h3>
-                <p class="text-slate-600 leading-relaxed">Просмотр фильмов про отважных собак, глубокомысленные вздохи и сладкая дрёма. Мягкие подушки и персональные одеяла — для каждого гостя.</p>
+        <section id="services" class="grid md:grid-cols-3 gap-6 mb-8 stagger-container">
+            <article class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animated-element slide-up">
+                <h3 class="font-bold mb-2 text-lg">🐾 Лежание на диване со смыслом</h3>
+                <p class="text-sm text-slate-600">Просмотр фильмов про отважных собак, глубокомысленные вздохи и сладкая дрёма. Мягкие подушки и персональные одеяла — для каждого гостя.</p>
             </article>
-            <article class="service-card glass-card p-8 rounded-3xl animated-element stagger-delay-2 flex flex-col items-start">
-                <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm floating-icon" style="animation-delay: -1s;">🌳</div>
-                <h3 class="font-bold mb-3 text-xl text-slate-800">Двухразовый патруль района</h3>
-                <p class="text-slate-600 leading-relaxed">Исследуем все кусты, знакомимся с местными запахами и оставляем свои "сообщения". Прогулки подстраиваются под темперамент.</p>
+            <article class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animated-element slide-up">
+                <h3 class="font-bold mb-2 text-lg">🌳 Двухразовый патруль района</h3>
+                <p class="text-sm text-slate-600">Исследуем все кусты, знакомимся с местными запахами и оставляем свои "сообщения". Прогулки подстраиваются под темперамент.</p>
             </article>
-            <article class="service-card glass-card p-8 rounded-3xl animated-element stagger-delay-3 flex flex-col items-start">
-                <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-3xl mb-4 shadow-sm floating-icon" style="animation-delay: -2s;">🍖</div>
-                <h3 class="font-bold mb-3 text-xl text-slate-800">Ресторанное обслуживание</h3>
-                <p class="text-slate-600 leading-relaxed">Питание по Вашему меню и в привычное время. Никаких "у нас этого нет" — только любимые лакомства и правильные порции.</p>
+            <article class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animated-element slide-up">
+                <h3 class="font-bold mb-2 text-lg">🍖 Ресторанное обслуживание</h3>
+                <p class="text-sm text-slate-600">Питание по Вашему меню и в привычное время. Никаких "у нас этого нет" — только любимые лакомства и правильные порции.</p>
             </article>
         </section>
-
-        <!-- Features -->
-        <section class="glass-card p-8 sm:p-12 rounded-3xl mb-12 animated-element relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-10 opacity-10 pointer-events-none parallax-item" data-speed="-0.03">
-                <svg width="200" height="200" viewBox="0 0 100 100" fill="#f59e0b"><path d="M20,50 Q40,10 60,50 T100,50"/></svg>
-            </div>
-            
-            <h3 class="text-2xl sm:text-3xl font-extrabold mb-8 text-center bg-amber-100/50 inline-block px-6 py-2 rounded-full mx-auto block w-max">Что ещё включено в зоогостиницу</h3>
-            
-            <ul class="grid md:grid-cols-2 gap-6 text-slate-700">
-                <li class="flex items-center gap-4 bg-white/50 p-4 rounded-2xl transition-transform hover:scale-105 shadow-sm">
-                    <span class="text-3xl">❤️</span>
-                    <span class="font-medium">Чесание за ушком non-stop (включено в базовый тариф).</span>
-                </li>
-                <li class="flex items-center gap-4 bg-white/50 p-4 rounded-2xl transition-transform hover:scale-105 shadow-sm">
-                    <span class="text-3xl">📸</span>
-                    <span class="font-medium">Ежедневные фото и видео счастливого питомца прямо в вашем телефоне.</span>
-                </li>
-                <li class="flex items-center gap-4 bg-white/50 p-4 rounded-2xl transition-transform hover:scale-105 shadow-sm">
-                    <span class="text-3xl">🛏️</span>
-                    <span class="font-medium">Мягкие диваны и персональное место для сна (без клеток и ограничений).</span>
-                </li>
-                <li class="flex items-center gap-4 bg-white/50 p-4 rounded-2xl transition-transform hover:scale-105 shadow-sm">
-                    <span class="text-3xl">🩺</span>
-                    <span class="font-medium">Безопасность и забота 24/7 — только неагрессивные, привитые питомцы.</span>
-                </li>
+        <section class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg mb-8 animated-element slide-up transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <h3 class="text-2xl font-bold mb-5">Что ещё включено в нашу зоогостиницу</h3>
+            <ul class="text-slate-600 space-y-4 stagger-container">
+                <li class="animated-element slide-in-left flex items-start"><span class="animated-icon floating-icon mr-4 text-2xl leading-tight" style="animation-delay: 0s;">❤️</span><span>Чесание за ушком non-stop (включено в базовый тариф).</span></li>
+                <li class="animated-element slide-in-left flex items-start"><span class="animated-icon floating-icon mr-4 text-2xl leading-tight" style="animation-delay: 0.2s;">📸</span><span>Ежедневные фото и видео счастливого питомца прямо в вашем телефоне.</span></li>
+                <li class="animated-element slide-in-left flex items-start"><span class="animated-icon floating-icon mr-4 text-2xl leading-tight" style="animation-delay: 0.4s;">🛏️</span><span>Мягкие диваны и персональное место для сна (без клеток и ограничений).</span></li>
+                <li class="animated-element slide-in-left flex items-start"><span class="animated-icon floating-icon mr-4 text-2xl leading-tight" style="animation-delay: 0.6s;">🩺</span><span>Безопасность и забота 24/7 — только неагрессивные, привитые питомцы.</span></li>
             </ul>
         </section>
-
-        <!-- Info & Price -->
-        <section class="grid md:grid-cols-2 gap-6 mb-12">
-            <div class="glass-card p-8 rounded-3xl animated-element stagger-delay-1 flex flex-col justify-center relative overflow-hidden group">
-                <div class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <h3 class="text-2xl font-bold mb-4 text-slate-800">О нас: догситтеры с любовью</h3>
-                <p class="text-slate-600 mb-4 leading-relaxed">Мы — команда профессиональных обнимателей собак, сертифицированных специалистов по бросанию мячика и главных амбассадоров собачьего счастья. Ваш питомец будет окружен заботой, лаской и безопасностью 24/7.</p>
-                <p class="text-sm text-amber-700 font-semibold bg-amber-50 p-3 rounded-lg border border-amber-100">Работаем индивидуально, следим за рационом и настроением каждого гостя.</p>
+        <section class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-md animated-element slide-in-left transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                <h3 class="text-xl font-semibold mb-3">О нас: догситтеры с любовью</h3>
+                <p class="text-slate-600 mb-3">Мы — команда профессиональных обнимателей собак, сертифицированных специалистов по бросанию мячика и главных амбассадоров собачьего счастья. Ваш питомец будет окружен заботой, лаской и безопасностью 24/7.</p>
+                <p class="text-sm text-slate-500">Работаем индивидуально, следим за рационом и настроением каждого гостя.</p>
             </div>
-            
-            <div class="glass-card p-8 rounded-3xl animated-element stagger-delay-2 flex flex-col justify-center border-2 border-amber-300/30 relative">
-                <div class="absolute -top-6 -right-6 text-6xl opacity-20 rotate-12">🏷️</div>
-                <h3 class="text-2xl font-bold mb-2 text-slate-800">Стоимость передержки</h3>
-                <div class="my-4">
-                    <p id="price-counter" class="text-4xl font-extrabold text-amber-600 tracking-tight">От 2200 ₽ / сутки</p>
-                    <div class="h-1 w-full bg-amber-100 rounded-full mt-2 overflow-hidden">
-                        <div class="h-full bg-amber-500 w-2/3 animate-pulse"></div>
-                    </div>
-                </div>
-                <p class="text-slate-600 mb-4">Полный пансион и хвост виляющий от радости. Места ограничены — мягкий диван только для дружелюбных гостей.</p>
-                <p class="text-xs text-slate-500 uppercase tracking-wider font-bold">Условия: прививки, обработка от паразитов, ненападающее поведение.</p>
+            <div class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-md animated-element slide-in-right transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                <h3 class="text-xl font-semibold mb-2">Стоимость передержки</h3>
+                <p id="price-counter" class="text-3xl font-bold text-amber-500 mb-2">От 2200 ₽ / сутки</p>
+                <p class="text-slate-600 mb-3">Полный пансион и хвост виляющий от радости. Места ограничены — мягкий диван только для дружелюбных гостей.</p>
+                <p class="text-sm text-slate-500">Условия: прививки, обработка от паразитов, ненападающее поведение.</p>
             </div>
         </section>
-
-        <!-- Warning Block -->
-        <section class="bg-gradient-to-br from-amber-100 to-amber-50 p-8 rounded-3xl shadow-lg border border-amber-200 mb-12 animated-element transform transition-transform hover:scale-[1.01]">
-            <div class="flex flex-col md:flex-row items-center gap-6">
-                <div class="shrink-0 text-5xl animate-bounce">⚠️</div>
-                <div>
-                    <h3 class="text-2xl font-bold mb-2 text-amber-900">ВАЖНО</h3>
-                    <p class="text-amber-900/80 mb-6 text-lg">Количество мест на мягком диване ограничено! Мы принимаем только неагрессивных, привитых и обработанных от паразитов собак.</p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="px-6 py-3 rounded-xl bg-amber-700 text-white font-bold shadow-lg shadow-amber-700/30 hover:bg-amber-800 transition-colors cta-button">
-                            Забронировать (WhatsApp)
-                        </a>
-                        <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="px-6 py-3 rounded-xl border-2 border-amber-600 text-amber-800 font-bold hover:bg-amber-200 transition-colors cta-button">
-                            Telegram
-                        </a>
-                    </div>
-                </div>
+        <section class="bg-amber-100 p-6 rounded-2xl shadow-inner border border-amber-200 mb-8 animated-element scale-in transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:bg-amber-200 hover:border-amber-300">
+            <h3 class="text-2xl font-bold mb-3 text-amber-800">ВАЖНО</h3>
+            <p class="text-slate-700 mb-6">Количество мест на мягком диване ограничено! Мы принимаем только неагрессивных, привитых и обработанных от паразитов собак.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="https://wa.me/79539614167" target="_blank" rel="noreferrer" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-amber-700 text-white font-semibold shadow-lg shadow-amber-600/30 hover:bg-amber-800 cta-pulse cta-button shimmer-button">Забронировать (WhatsApp)</a>
+                <a href="https://t.me/+79539614167" target="_blank" rel="noreferrer" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl border-2 border-amber-400 text-amber-800 font-semibold hover:bg-amber-200 cta-button shimmer-button">Telegram</a>
             </div>
         </section>
-
-        <!-- FAQ -->
-        <section class="glass-card p-8 rounded-3xl mb-12 animated-element">
-            <h3 class="text-2xl font-bold mb-6 text-center">Часто задаваемые вопросы</h3>
-            <div class="space-y-4 max-w-3xl mx-auto">
-                <details class="group bg-white/40 rounded-xl overflow-hidden border border-white/60 transition-colors hover:bg-white/70">
-                    <summary class="flex justify-between items-center p-5 font-bold text-slate-700 cursor-pointer select-none">
-                        Можно ли оставить питомца на несколько недель?
-                        <span class="arrow-icon text-amber-500 text-2xl">▾</span>
-                    </summary>
-                    <div class="px-5 pb-5 text-slate-600">
-                        <p class="bg-amber-50/80 p-4 rounded-lg">Да — по предварительной договорённости. Длительные заезды оговариваются отдельно.</p>
-                    </div>
+        <section class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-md mb-8 animated-element slide-up transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <h3 class="text-xl font-semibold mb-4">Часто задаваемые вопросы (FAQ)</h3>
+            <div class="space-y-3">
+                <details class="group">
+                    <summary class="faq-summary font-medium cursor-pointer list-none flex justify-between items-center transition-colors duration-300 hover:text-amber-600 py-2">Можно ли оставить питомца на несколько недель?<span class="transition-transform duration-500 group-open:rotate-180 text-amber-500 text-xl">▾</span></summary>
+                    <p class="text-slate-600 bg-amber-50/50 rounded-md">Да — по предварительной договорённости. Длительные заезды оговариваются отдельно.</p>
                 </details>
-
-                <details class="group bg-white/40 rounded-xl overflow-hidden border border-white/60 transition-colors hover:bg-white/70">
-                    <summary class="flex justify-between items-center p-5 font-bold text-slate-700 cursor-pointer select-none">
-                        Что делать с лекарствами?
-                        <span class="arrow-icon text-amber-500 text-2xl">▾</span>
-                    </summary>
-                    <div class="px-5 pb-5 text-slate-600">
-                        <p class="bg-amber-50/80 p-4 rounded-lg">Оставьте инструкцию и лекарство. Мы даем лекарства по расписанию и сообщаем о приёме в мессенджере WhatsApp/Telegram.</p>
-                    </div>
+                <hr class="border-slate-200/80">
+                <details class="group">
+                    <summary class="faq-summary font-medium cursor-pointer list-none flex justify-between items-center transition-colors duration-300 hover:text-amber-600 py-2">Что делать с лекарствами?<span class="transition-transform duration-500 group-open:rotate-180 text-amber-500 text-xl">▾</span></summary>
+                    <p class="text-slate-600 bg-amber-50/50 rounded-md">Оставьте инструкцию и лекарство. Мы даем лекарства по расписанию и сообщаем о приёме в мессенджере WhatsApp/Telegram.</p>
                 </details>
-
-                <details class="group bg-white/40 rounded-xl overflow-hidden border border-white/60 transition-colors hover:bg-white/70">
-                    <summary class="flex justify-between items-center p-5 font-bold text-slate-700 cursor-pointer select-none">
-                        Как Вы присылаете фото-отчёты?
-                        <span class="arrow-icon text-amber-500 text-2xl">▾</span>
-                    </summary>
-                    <div class="px-5 pb-5 text-slate-600">
-                        <p class="bg-amber-50/80 p-4 rounded-lg">Через WhatsApp/Telegram — по Вашему желанию: ежедневные короткие ролики и фото-пачки.</p>
-                    </div>
+                <hr class="border-slate-200/80">
+                <details class="group">
+                    <summary class="faq-summary font-medium cursor-pointer list-none flex justify-between items-center transition-colors duration-300 hover:text-amber-600 py-2">Как Вы присылаете фото-отчёты?<span class="transition-transform duration-500 group-open:rotate-180 text-amber-500 text-xl">▾</span></summary>
+                    <p class="text-slate-600 bg-amber-50/50 rounded-md">Через WhatsApp/Telegram — по Вашему желанию: ежедневные короткие ролики и фото-пачки.</p>
                 </details>
             </div>
         </section>
-
-        <!-- Map -->
-        <section id="map-location" class="glass-card p-4 sm:p-8 rounded-3xl shadow-xl mb-12 animated-element">
+        <section id="map-location" class="bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg mb-8 animated-element slide-up transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
             <h3 class="text-2xl font-bold mb-4 text-center">Как нас найти в Туле</h3>
             <p class="text-center text-slate-600 mb-6 max-w-2xl mx-auto">Находимся в удобном и тихом месте. Вы всегда можете приехать и посмотреть условия. Пожалуйста, договоритесь о визите заранее по телефону.</p>
-            <div class="rounded-2xl overflow-hidden shadow-inner border-4 border-white" id="map-container">
-                <div class="map-facade h-96 w-full bg-slate-200 flex flex-col items-center justify-center cursor-pointer relative group" id="map-facade">
-                    <div class="text-6xl mb-4 transform group-hover:scale-110 transition-transform">🗺️</div>
-                    <span class="font-bold text-slate-500 group-hover:text-amber-600 transition-colors">Нажмите, чтобы загрузить карту</span>
-                    <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
-                </div>
+            <div class="rounded-2xl overflow-hidden shadow-md border border-slate-200/50" id="map-container">
+                <div class="map-facade" id="map-facade"></div>
             </div>
         </section>
-
-        <!-- Facts -->
-        <section id="dog-facts-section" class="hidden glass-card p-8 rounded-3xl shadow-lg mb-12 text-center relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-amber-300 via-amber-500 to-amber-300"></div>
-            <h3 class="text-2xl font-bold mb-6 text-amber-800">Случайный факт о собаках 🐾</h3>
-            <div class="min-h-[100px] flex items-center justify-center mb-6">
-                <p id="dog-fact-text" class="text-slate-700 text-xl font-medium leading-relaxed italic transition-opacity duration-300"></p>
+        <section id="dog-facts-section" class="hidden bg-white/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg mb-8 text-center">
+            <h3 class="text-2xl font-bold mb-4 text-amber-800">Случайный факт о собаках 🐾</h3>
+            <div class="relative">
+                <p id="dog-fact-text" class="text-slate-700 leading-relaxed text-lg mb-6"></p>
             </div>
-            <button id="new-fact-button" class="px-8 py-3 rounded-xl border-2 border-amber-400 text-amber-800 font-bold hover:bg-amber-400 hover:text-white transition-all cta-button">
-                Узнать ещё!
-            </button>
+            <button id="new-fact-button" class="mx-auto px-6 py-3 rounded-xl border-2 border-amber-400 text-amber-800 font-semibold hover:bg-amber-200 cta-button shimmer-button">Узнать ещё!</button>
         </section>
-
-        <footer class="text-center pb-8 pt-4">
-            <p class="text-slate-500 text-sm font-medium">© Собачье дело, Тула. Все права защищены. <br class="sm:hidden">Использование материалов сайта возможно только с письменного разрешения правообладателя.</p>
+        <footer class="text-center text-sm text-slate-500 pb-6 animated-element scale-in">
+            <p>© Собачье дело, Тула. Все права защищены. Использование материалов сайта возможно только с письменного разрешения правообладателя.</p>
         </footer>
     </main>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add('loaded');
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Remove Preloader
-            setTimeout(() => {
-                document.getElementById('preloader').style.opacity = '0';
-                document.getElementById('preloader').style.visibility = 'hidden';
-            }, 500);
-
-            // Parallax Effect
-            const parallaxItems = document.querySelectorAll('.parallax-item');
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                parallaxItems.forEach(item => {
-                    const speed = item.dataset.speed || 0;
-                    item.style.transform = `translateY(${scrolled * speed}px)`;
-                });
-            });
-
-            // Scroll Animations
+        const animatedElements = document.querySelectorAll(".animated-element");
+        if ("IntersectionObserver" in window) {
             const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        const staggerContainer = entry.target.closest(".stagger-container");
+                        if (staggerContainer && !staggerContainer.dataset.staggered) {
+                            staggerContainer.dataset.staggered = "true";
+                            Array.from(staggerContainer.querySelectorAll(".animated-element, .animated-icon")).forEach((el, i) => {
+                                el.style.transitionDelay = `${i * 120}ms`;
+                                el.style.animationDelay = `${i * 120 + 200}ms`;
+                            });
+                        }
+                        if (!entry.target.closest(".stagger-container")) {
+                            observer.unobserve(entry.target);
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+            animatedElements.forEach((el) => {
+                observer.observe(el);
+            });
+        } else {
+             animatedElements.forEach((el) => el.classList.add("is-visible"));
+        }
+
+        let isScrolling = false;
+        let lastScrollY = window.scrollY;
+        
+        function updateScroll() {
+            document.body.style.setProperty("--scroll-y", `${-lastScrollY / 15}px`);
+            isScrolling = false;
+        }
+
+        window.addEventListener("scroll", () => {
+            lastScrollY = window.scrollY;
+            if (!isScrolling) {
+                isScrolling = true;
+                window.requestAnimationFrame(updateScroll);
+            }
+        }, { passive: true });
+
+
+        const mapContainer = document.getElementById("map-container");
+        const mapFacade = document.getElementById("map-facade");
+        const loadMap = () => {
+            if (mapFacade && mapContainer) {
+                mapContainer.innerHTML = '<iframe title="Карта расположения Собачье дело в Туле" src="https://yandex.ru/map-widget/v1/?um=constructor%3Afe7891560a9668271fd0d27abd5b65674991c50f508218fd566e5c0ad8f17c9f&source=constructor" width="100%" height="450" style="border:0" loading="lazy"></iframe>';
+            }
+        };
+        
+        if(mapContainer && "IntersectionObserver" in window) {
+            new IntersectionObserver((entries, obs) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
+                        if (window.innerWidth >= 768) {
+                             mapFacade.addEventListener("click", loadMap, { once: true });
+                        } else {
+                             loadMap();
+                        }
+                        obs.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+            }, { threshold: 0.1, rootMargin: "200px" }).observe(mapContainer);
+        } else if(mapFacade) {
+            loadMap();
+        }
 
-            document.querySelectorAll('.animated-element').forEach(el => observer.observe(el));
-
-            // Header Blur on Scroll
-            const header = document.getElementById('main-header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('shadow-md', 'bg-white/90');
-                    header.classList.remove('py-3');
-                    header.classList.add('py-2');
-                } else {
-                    header.classList.remove('shadow-md', 'bg-white/90');
-                    header.classList.add('py-3');
-                    header.classList.remove('py-2');
-                }
-            });
-
-            // Infinite Gallery
-            const track = document.querySelector('.gallery-track');
-            if (track) {
-                const items = Array.from(track.children);
-                items.forEach(item => {
-                    const clone = item.cloneNode(true);
-                    track.appendChild(clone);
-                });
-                items.forEach(item => {
-                    const clone = item.cloneNode(true);
-                    track.appendChild(clone);
-                });
-            }
-
-            // Map Logic
-            const mapContainer = document.getElementById("map-container");
-            const mapFacade = document.getElementById("map-facade");
-            const loadMap = () => {
-                if (mapFacade && mapContainer) {
-                    mapContainer.innerHTML = '<iframe title="Карта расположения Собачье дело в Туле" src="https://yandex.ru/map-widget/v1/?um=constructor%3Afe7891560a9668271fd0d27abd5b65674991c50f508218fd566e5c0ad8f17c9f&source=constructor" width="100%" height="450" style="border:0; animation: fade-in 1s;" loading="lazy"></iframe>';
-                }
-            };
-            if(mapFacade) mapFacade.addEventListener("click", loadMap, { once: true });
-
-            // Price Counter Animation
-            const priceCounter = document.getElementById("price-counter");
-            if (priceCounter) {
-                const priceObserver = new IntersectionObserver((entries) => {
-                    if (entries[0].isIntersecting) {
-                        let start = 2200, end = 780;
-                        let duration = 2000;
+        const priceCounter = document.getElementById("price-counter");
+        if (priceCounter && "IntersectionObserver" in window) {
+            new IntersectionObserver((entries, obs) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const startPrice = 2200;
+                        const endPrice = 780;
+                        const duration = 2000;
                         let startTime = null;
-                        const animate = (timestamp) => {
+
+                        const animatePrice = (timestamp) => {
                             if (!startTime) startTime = timestamp;
-                            const progress = Math.min((timestamp - startTime) / duration, 1);
-                            const ease = 1 - Math.pow(1 - progress, 4); 
-                            const current = Math.floor(start - (start - end) * ease);
-                            priceCounter.textContent = `От ${current} ₽ / сутки`;
-                            if (progress < 1) requestAnimationFrame(animate);
+                            const progress = timestamp - startTime;
+                            const percentage = Math.min(progress / duration, 1);
+                            const easedPercentage = 1 - Math.pow(1 - percentage, 3);
+                            const currentPrice = startPrice - (startPrice - endPrice) * easedPercentage;
+                            
+                            priceCounter.textContent = `От ${Math.floor(currentPrice)} ₽ / сутки`;
+                            
+                            if (progress < duration) {
+                                requestAnimationFrame(animatePrice);
+                            } else {
+                                priceCounter.textContent = `От ${endPrice} ₽ / сутки`;
+                            }
                         };
-                        requestAnimationFrame(animate);
-                        priceObserver.disconnect();
+                        requestAnimationFrame(animatePrice);
+                        obs.unobserve(entry.target);
                     }
                 });
-                priceObserver.observe(priceCounter);
-            }
+            }, { threshold: 0.8 }).observe(priceCounter);
+        }
 
-            // Dog Facts Logic
+        const gallery = document.querySelector('.photo-gallery');
+        if (gallery) {
+            const track = gallery.querySelector('.gallery-track');
+            const originalItems = Array.from(track.children);
+            if (originalItems.length > 0) {
+                const fragment = document.createDocumentFragment();
+                for (let i = 0; i < 3; i++) {
+                    originalItems.forEach(item => {
+                        const clone = item.cloneNode(true);
+                        clone.setAttribute('aria-hidden', 'true');
+                        fragment.appendChild(clone);
+                    });
+                }
+                track.appendChild(fragment);
+                
+                let resizeTimeout;
+                const manageCarousel = () => {
+                    const galleryWidth = gallery.offsetWidth;
+                    const firstItem = originalItems[0];
+                    if (!firstItem) return;
+                    
+                    const itemWidth = firstItem.offsetWidth;
+                    const visibleItemCount = galleryWidth / itemWidth;
+                    
+                    if (visibleItemCount < 2.8 || window.innerWidth < 768) {
+                        gallery.classList.add('scrolling');
+                        const itemCount = originalItems.length;
+                        const gap = parseInt(window.getComputedStyle(track).gap) || 16;
+                        const scrollDistance = (itemWidth + gap) * itemCount;
+                        const duration = scrollDistance / 50; 
+                        track.style.setProperty('--scroll-distance', `-${scrollDistance}px`);
+                        track.style.setProperty('--scroll-duration', `${duration.toFixed(2)}s`);
+                    } else {
+                        gallery.classList.remove('scrolling');
+                    }
+                };
+
+                const debouncedManageCarousel = () => {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(manageCarousel, 250);
+                };
+
+                window.addEventListener('load', manageCarousel);
+                window.addEventListener('resize', debouncedManageCarousel);
+
+            }
+        }
+        
+        const initLocalFacts = () => {
             const factsSection = document.getElementById('dog-facts-section');
+            if (!factsSection) return;
+
             const factTextElement = document.getElementById('dog-fact-text');
             const newFactButton = document.getElementById('new-fact-button');
-            const allFacts = ["Собаки по природе подчиняются любому существу с более высоким статусом стаи, человеку или собаке.","Чем длиннее собачий нос, тем эффективнее его внутренняя система охлаждения.","Порода Чихуахуа была названа в честь штата в Мексике, где она были обнаружена.","Басенджи - единственная в мире собака без лая.","Собаки иногда улыбаются - так же, как и люди - с открытым ртом.","Бордер-колли часто считаются самой умной породой собак.","Усы собаки используются для навигации и обнаружения объектов в темноте.","Ньюфаундлендская порода имеет водостойкую шерсть и перепончатые лапы.","Собак можно обучить выявлять рак и другие заболевания у людей по запаху.","У взрослой собаки 42 зуба.","Три собаки выжили после гибели «Титаника».","Бигль и колли считаются самыми любопытными породами собак.","Собаки упоминаются в Библии более 35 раз.","Лабрадор-ретривер - самая популярная порода в США, Канаде и Великобритании.","Собаки могут видеть в цвете, но их зрение похоже на зрение человека с дальтонизмом.","Отпечаток носа собаки уникален, как отпечаток пальца человека.","Собаки потеют в основном через подушечки своих лап.","Собачий слух примерно в четыре раза чувствительнее человеческого."];
-            
-            if (factsSection && factTextElement) {
-                factsSection.classList.remove('hidden');
-                const showFact = () => {
-                    factTextElement.style.opacity = 0;
-                    setTimeout(() => {
-                        factTextElement.textContent = allFacts[Math.floor(Math.random() * allFacts.length)];
-                        factTextElement.style.opacity = 1;
-                    }, 300);
-                };
-                showFact();
-                newFactButton.addEventListener('click', showFact);
-            }
-        });
-    </script>
+
+            const allFacts = ["Собаки по природе подчиняются любому существу с более высоким статусом стаи, человеку или собаке.","Чем длиннее собачий нос, тем эффективнее его внутренняя система охлаждения.","Порода Чихуахуа была названа в честь штата в Мексике, где она были обнаружена.","Басенджи - единственная в мире собака без лая.","Собаки иногда улыбаются - так же, как и люди - с открытым ртом. Это может указывать на расслабленное, покорное состояние.","Бордер-колли часто считаются самой умной породой собак, некоторые из них распознают слова для 1000 предметов.","Усы собаки используются для навигации и обнаружения объектов в темноте.","Ньюфаундлендская порода имеет водостойкую шерсть и перепончатые лапы, что делает их отличными пловцами.","Собак можно обучить выявлять рак и другие заболевания у людей по запаху.","Рин Тин Тин был первой голливудской собачьей звездой и подписывал контракты отпечатком лапы.","У взрослой собаки 42 зуба.","Александр Великий основал и назвал город Перитас в память о своей любимой собаке.","Три собаки выжили после гибели «Титаника»: ньюфаундлендская, померанская и пекинесская.","Бигль и колли считаются самыми любопытными породами собак.","Собаки упоминаются в Библии более 35 раз.","Лабрадор-ретривер - самая популярная порода в США, Канаде и Великобритании уже много лет.","Самая умная порода собак - бордер-колли.","Собаки обычно имеют от одного до шестнадцати или даже больше щенков в одном помете.","У большинства собак есть 18 или более мышц, которые позволяют им двигать ушами.","Сука - литературное слово, обозначающее самку собаки.","Средняя городская собака живет на 3 года дольше, чем деревенская.","Большинство собак способны понимать до 250 слов и жестов.","Бордер-колли по имени Чейзер выучил названия 1022 игрушек и мог приносить каждую по команде.","Собаки могут видеть в цвете, но их зрение похоже на зрение человека с красно-зеленым дальтонизмом.","Отпечаток носа собаки уникален, как отпечаток пальца человека.","Собаки потеют в основном через подушечки своих лап.","Щенки рождаются глухими, слепыми и беззубыми.","Сердце крупной собаки бьется медленнее (60-100 ударов в минуту), чем у маленькой (100-140 ударов).","Порода Салюки — одна из древнейших, изображения похожих собак находят в египетских гробницах.","Собаки сворачиваются калачиком во сне, чтобы защитить свои жизненно важные органы — это древний инстинкт.","Собачий слух примерно в четыре раза чувствительнее человеческого.","Шоколад ядовит для собак из-за вещества теобромин, который они не могут переваривать.","Собаки могут испытывать ревность, когда их хозяева проявляют внимание к другим.","Собака Лайка стала первым живым существом, выведенным на орбиту Земли.","Собаки могут определять время. Они знают, когда хозяин должен вернуться домой.","Самая высокая собака в истории, немецкий дог по кличке Зевс, имела рост 111 см в холке.","Далматинцы рождаются полностью белыми, а их знаменитые пятна появляются по мере взросления.","Собаки зевают не только от усталости, но и чтобы выразить стресс или успокоиться.","Обоняние собаки в 10,000 - 100,000 раз сильнее человеческого.","Собаки машут хвостом вправо, когда счастливы, и влево, когда напуганы или встревожены.","Порода Лундехунд имеет шесть пальцев на каждой лапе и может закрывать свои уши для защиты от воды.","Средняя собака может бежать со скоростью около 30 км/ч.","Грейхаунды — самые быстрые собаки, способные развивать скорость до 72 км/ч на коротких дистанциях."];
+            let factDeck = [];
+            const shuffleDeck = () => {
+                factDeck = [...allFacts];
+                for (let i = factDeck.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [factDeck[i], factDeck[j]] = [factDeck[j], factDeck[i]];
+                }
+            };
+            const getNewFact = () => {
+                if (factDeck.length === 0) {
+                    shuffleDeck();
+                }
+                const fact = factDeck.pop();
+                factTextElement.style.opacity = 0;
+                setTimeout(() => {
+                    factTextElement.textContent = fact;
+                    factTextElement.style.opacity = 1;
+                }, 300);
+            };
+
+            factsSection.classList.remove('hidden');
+            getNewFact();
+            newFactButton.addEventListener('click', getNewFact);
+        };
+
+        initLocalFacts();
+    });
+</script>
 </body>
 </html>
